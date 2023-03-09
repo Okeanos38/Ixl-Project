@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .class-list {
+        @apply list-decimal ml-7 text-base text-gray-900;
+    }
+    .class-list li{
+        @apply mb-1;
+    }
+    .class-list li a{
+        @apply hover:text-green-700 hover:underline transition duration-150 ease-in-out;
+    }
+    /*Volkan Korkmaz Games*/
+    #numbers {
+        @apply flex items-center mt-5;
+    }
+    #numbers p{
+        @apply text-3xl;
+    }
+    #buttons {
+        @apply flex space-x-3 mt-5;
+    }
+    #buttons button {
+        @apply px-5 py-3 text-xl border border-blue-500 hover:bg-blue-500 transition duration-200 ease-in-out rounded-lg flex justify-center items-center;
+    }
+    #answers-count, #score, #timer-display {
+        @apply m-0 before:flex before:justify-center before:rounded-t-md before:p-2 before:text-white before:mb-2 bg-slate-400/30 pb-4 text-xl rounded-md text-center mb-3 font-semibold;
+    }
+    #answers-count{
+        @apply before:content-['Verilen_Cevap_Sayısı'] before:bg-green-500;
+    }
+    #score {
+        @apply before:content-['Puan'] before:bg-blue-500;
+    }
+    #timer-display {
+        @apply before:content-['Geçen_Zaman'] before:bg-orange-500;
+    }
+    .right *, .wrong *{
+        @apply opacity-0 pointer-events-none;
+    }
+    .right, .wrong {
+        @apply before:absolute before:inset-0  before:w-full sm:before:w-96 before:rounded-xl before:h-40 sm:before:h-48 sm:before:m-10  before:flex before:items-center before:justify-center before:text-5xl before:text-white;
+    }
+    .right #result, .wrong #result { 
+        @apply opacity-100 pointer-events-auto;
+     }
+    .right {
+        @apply before:bg-green-500 before:content-['🎉Doğru🎉'];
+    }
+    .wrong {
+        @apply before:bg-red-500 before:content-['Yanlış']
+    }
+    #result { 
+        @apply text-xl font-semibold;
+    }
+    #gamesScreen.finish #answer{
+        @apply hidden;
+    }
+    .finishScreen h1, .finishScreen .button{
+        @apply hidden;
+    }
+    .finishScreen.active {
+        @apply w-full text-center;
+    }
+    .finishScreen.active .scoreTable {
+        @apply flex sm:gap-3 mb-3 sm:mb-14 flex-col sm:flex-row;
+    }
+    .finishScreen.active .scoreTable p{
+        @apply flex-1;
+    }
+    .finishScreen.active h1, .finishScreen.active .button{
+        @apply flex flex-col gap-3 sm:flex-row sm:justify-center;
+    }
+}
