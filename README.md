@@ -32,3 +32,8 @@ For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
 ```
 npm run watch
 ```
+
+## Demo
+
+[Netlify demo link](https://wtetvui.netlify.app/).
+
