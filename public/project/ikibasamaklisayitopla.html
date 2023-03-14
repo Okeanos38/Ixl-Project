@@ -63,8 +63,8 @@
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">100.000 e Kadar
-                            Sayıları Karşılaştırın</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">İki Basamaklı
+                            Sayıların Toplanması</span>
                     </div>
                 </li>
             </ol>
@@ -73,35 +73,20 @@
             <div id="gamesScreen" class="flex flex-col sm:flex-row gap-5">
                 <div class="w-full sm:w-9/12 relative" id="answer">
                     <div class="opacity-0" id="result"></div>
-                    <h1 class="text-2xl">Hangi işaret ifadeyi doğru yapar?</h1>
                     <div id="numbers" class="flex gap-5">
                         <p id="number1"></p>
-                        <svg width="28" height="28" 28 xmlns="http://www.w3.org/2000/svg" fill="#000000"
-                            viewBox="0 0 1920 1920">
-                            <path
-                                d="M960 1242.342c62.23 0 112.941 50.71 112.941 112.94 0 62.231-50.71 112.942-112.941 112.942-62.23 0-112.941-50.71-112.941-112.941 0-62.23 50.71-112.941 112.941-112.941Zm89.336-892.01c114.862 29.704 208.264 123.106 237.968 237.967 23.378 90.466 10.729 183.304-35.464 261.46-45.515 77.138-121.186 133.947-207.586 156.084-13.779 3.614-27.783 14.795-27.783 31.962v91.595H903.529v-91.595c0-66.183 46.306-124.235 112.716-141.29 57.6-14.795 107.971-52.743 138.353-104.131 30.833-52.292 39.19-114.635 23.378-175.85-19.651-75.67-81.204-137.223-156.875-156.875-70.927-18.183-143.435-3.953-199.341 39.304-55.68 43.143-87.642 108.31-87.642 178.673H621.176c0-105.6 47.888-203.294 131.464-268.01 83.69-64.828 191.774-86.287 296.696-59.294ZM960-.01c-529.355 0-960 430.644-960 960 0 529.355 430.645 960 960 960 529.468 0 960-430.645 960-960 0-529.356-430.532-960-960-960"
-                                fill-rule="evenodd" />
-                        </svg>
+                        <p>+</p>
                         <p id="number2"></p>
+                        <p>=</p>
+                        <input type="number" id="sayitoplami" width="100px" height="100px" class="form-control"
+                            onFocus="if(this.value==this.defaultValue) this.value='';"
+                            style="border:1px solid blue;border-radius: 5px" required />
+                        <div id="buttons">
+                            <button class="group duration-300 transition ease-in-out" id="cevap"
+                                style="height:10px;margin-bottom: 20px;border-color: rgb(59 130 246 / var(--tw-border-opacity));">Cevapla</button>
+                        </div>
                     </div>
-                    <div id="buttons">
-                        <button class="group duration-300 transition ease-in-out" id="btnGreater"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 1024 1024">
-                                <path class="group-hover:fill-white" fill="#000000"
-                                    d="M338.752 104.704a64 64 0 0 0 0 90.496l316.8 316.8-316.8 316.8a64 64 0 0 0 90.496 90.496l362.048-362.048a64 64 0 0 0 0-90.496L429.248 104.704a64 64 0 0 0-90.496 0z" />
-                            </svg></button>
-                        <button class="group duration-300 transition ease-in-out" id="btnLess"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 1024 1024">
-                                <path class="group-hover:fill-white" fill="#000000"
-                                    d="M685.248 104.704a64 64 0 0 1 0 90.496L368.448 512l316.8 316.8a64 64 0 0 1-90.496 90.496L232.704 557.248a64 64 0 0 1 0-90.496l362.048-362.048a64 64 0 0 1 90.496 0z" />
-                            </svg></button>
-                        <button class="group duration-300 transition ease-in-out" id="btnEqual"><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                version="1.1" width="25px" height="25px" viewBox="0 0 32 32" xml:space="preserve">
-                                <path class="group-hover:fill-white" fill="#000"
-                                    d="M6,12c0-1.104,0.896-2,2-2h16c1.104,0,2,0.896,2,2s-0.896,2-2,2H8C6.896,14,6,13.104,6,12z M24,18H8  c-1.104,0-2,0.896-2,2s0.896,2,2,2h16c1.104,0,2-0.896,2-2S25.104,18,24,18z" />
-                            </svg></button>
-                    </div>
+
                 </div>
                 <div class="finishScreen w-full sm:w-3/12">
                     <h1 class="text-5xl mb-14">Tebrikler Kazandınız !</h1>
@@ -120,60 +105,24 @@
                 </div>
             </div>
         </div>
-        <div class="container px-5 sm:px-16 mt-20 mb-14 flex flex-col sm:flex-row gap-10">
+         <div class="container px-5 sm:px-16 mt-20 mb-14 flex flex-col sm:flex-row gap-10">
             <div class="w-full sm:w-9/12">
                 <h1 class="text-center font-bold text-5xl mb-14 mt-20">Konu Anlatımı</h1>
                 <div class="w3-container">
-                    <h2 class="text-3xl font-bold">&gt; Büyüktür işareti</h2>
+                    <h2 class="text-3xl font-bold">Eldesiz Toplama</h2><br>
                     <p>
-                        Bir sayının diğer sayıdan büyük olduğu matematikte <strong>&gt;</strong> işareti ile
-                        belirtilir.&gt; ( büyüktür ) işareti, işaretin solundaki sayının sağındaki sayıdan daha büyük
-                        olduğunu belirtir.Örnek kullanımlar
+                       Birler ve onlar basamağının toplamının çift rakamı geçmediği durumları eldesiz toplama denmektedir. Burada toplama işlemi yaparken önce birlikleri topluyoruz ve sonra da onlukları topluyoruz
                     </p>
-                    <p>"5 , 2'den büyüktür" yazmak yerine 5 &gt; 2 diye yazmak daha kısa,kolay ve anlaşılırdır.Türkçe
-                        bilmeyen biride 5'in 2'den büyük olduğunu anlayabilir.</p>
-                    <p>"5 + 2'nin sonucu 6'dan büyüktür" yazmak yerine 5 + 2 &gt; 6 diye yazılabilir.</p>
-                    <p>"8 + 4'ün sonucu 6 + 5'den büyüktür" yazmak yerine 8 + 4 &gt; 6 + 5 diye yazılabilir.</p>
-                    <h2 class="text-3xl font-bold">&lt; Küçüktür işareti</h2>
+                    <p><b>Not:</b> Toplama işlemi yaparken mutlaka birler basamağından başlamamız gerektiğini unutmamalıyız. O bizim için en önemli kuraldır. Önce birler basamağından başlayarak toplama işlemini yapacağız. Daha sonra onlar basamağındaki işlemi yapacağız ve yine aşağı kısma yazacağız</p>
+                   
+                    <br><h2 class="text-3xl font-bold">Eldeli Toplama</h2><br>
                     <p>
-                        Bir sayının diğer sayıdan küçük olduğu matematikte <strong>&lt;</strong> işareti ile
-                        belirtilir.&lt; ( küçüktür ) işareti, işaretin solundaki sayının sağındaki sayıdan daha küçük
-                        olduğunu belirtir.Örnek kullanımlar
+                        Eldeli toplamada da  aynı şekilde önce birler basamağını ve sonra onlar basamağını toplayacağız. Ancak hem birler basamağı hem de onlar basamağında toplama işlemi yaparken bu defa elimizde bir sayı olacak. Eğer birler ve onlar basamağında toplam sayı çift rakam çıkıyor ise buna eldeli toplama denir
                     </p>
-                    <p>"5 , 8'den küçüktür" yazmak yerine 5 &lt; 8 diye yazılabilir.</p>
-                    <p>"4 + 2'nin sonucu 9'dan küçüktür" yazmak yerine 4 + 2 &lt; 9 diye yazılabilir.</p>
-                    <p>"7 + 5'ün sonucu 9 + 8'den küçüktür" yazmak yerine 7 + 5 &lt; 9 + 8 diye yazılabilir.</p>
                     <section><br />
-                        <h3 class="text-3xl font-bold">2 soru ve çözümü</h3>
-                        <strong>Soru</strong>
-                        <p>
-                            316 &gt; ? <br>Yukarıdaki ifadede soru işareti yerine yazılabilecek en büyük doğal sayı
-                            kaçtır?
-                        </p>
-                        <strong>Çözümü</strong>
-                        <ul class="list-disc ml-10">
-                            <li>&gt; işareti büyüktür işaretidir.İşaretin solundaki sayı sağındaki sayıdan büyüktür.
-                            </li>
-                            <li>Soru işareti yerine 316 dan küçük sayılar yani 315 , 314 , 313 gibi sayılar yazılabilir.
-                            </li>
-                            <li>Soruda en büyük sorulduğundan doğru cevap 315 olacaktır.</li>
-                        </ul><br />
-                        <strong>Soru</strong>
-                        <p>
-                            350 - 25 &lt; A olduğuna göre A yerine yazılabilecek en küçük doğal sayı kaçtır?
-                        </p>
-                        <strong>Çözümü</strong>
-                        <ul>
-                            <li>&lt; işareti küçüktür işaretidir.İşaretin solundaki sayı sağındaki sayıdan küçüktür.
-                            </li>
-                            <li>350 - 25 işlemi sonucu 325 olur.</li>
-                            <li>325 &lt; A olur.</li>
-                            <li>A yerine 325 den büyük sayılar yani 326 , 327 , 328 gibi sayılar yazılabilir.</li>
-                            <li>Soruda en küçük sorulduğundan doğru cevap 324 olacaktır.</li>
-                        </ul><br />
                         <h1 class="text-3xl font-bold">Kaynakça</h1>
                         <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
-                            href="https://matematikproblemi.com/b%C3%BCy%C3%BCkt%C3%BCr-k%C3%BC%C3%A7%C3%BCkt%C3%BCr-i%C5%9Faretleri">https://matematikproblemi.com/büyüktür-küçüktür-işaretleri</a>
+                            href="https://www.hurriyet.com.tr/egitim/2-sinif-matematik-eldeli-ve-eldesiz-toplama-islemi-konu-anlatimi-41633041">https://www.hurriyet.com.tr/egitim/2-sinif-matematik-eldeli-ve-eldesiz-toplama-islemi-konu-anlatimi</a>
                     </section>
                 </div>
             </div>
@@ -207,7 +156,7 @@
                             </g>
                         </g>
                     </svg>
-                    Volkan Korkmaz
+                    Süheyla Korkmaz
                 </div>
                 <div class="flex gap-2 items-center justify-center mt-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px"
@@ -259,52 +208,57 @@
                         </g>
                     </svg>
                     <a class="text-black hover:text-blue-500 transition duration-200 ease-in-out" target="_blank"
-                        href="mailto:volkanseval.vk@gmail.com">volkanseval.vk@gmail.com</a>
-                </div>
-                <div class="flex space-x-2 items-center justify-center mt-4">
-                    <a target="_blank" title="instagram" href="https://www.instagram.com/volkn38/"><img src="../images/socials/instagram.svg"></a>
-                    <a target="_blank" title="twitter" href="#!"><img src="../images/socials/twitter.svg"></a>
-                    <a target="_blank" title="github" href="https://github.com/Okeanos38"><img src="../images/socials/github.svg"></a>
-                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/volkan--korkmaz/"><img src="../images/socials/linkedin.svg"></a>
+                        href="mailto:suheylakorkmaz07@gmail.com">suheylakorkmaz07@gmail.com</a>
                 </div>
             </div>
         </div>
     </section>
-    <footer>
+     <footer>
         <span class="block text-sm text-black sm:text-center py-6 px-5">© All Rights Reserved.</span>
     </footer>
 
+
     <script>
         // Rastgele iki ondalıklı sayı oluşturma
-        let num1 = parseFloat((Math.random() * 100).toFixed(3));
-        let num2 = parseFloat((Math.random() * 100).toFixed(3));
+        Math.rastgele = function (alt, ust) {
+
+            let sayi = Math.random();
+            sayi = sayi * (ust - alt);
+            sayi = Math.floor(sayi) + alt;
+
+            return sayi;
+        }
+        let sayi1 = Math.rastgele(10, 99);
+        let sayi2 = Math.rastgele(10, 99);
 
         // Sayıları ekrana yazdırma
-        document.getElementById("number1").innerHTML = num1;
-        document.getElementById("number2").innerHTML = num2;
+        document.getElementById("number1").innerHTML = sayi1;
+        document.getElementById("number2").innerHTML = sayi2;
+
+        let toplam = 0;
 
         // Puan değişkeni
         let score = 0;
         let answerCount = 0;
         let answer = document.getElementById("answer");
         let rightQuestionTimeOut;
+        let sayitoplami = 0;
 
         // Butonların işlevleri
-        document.getElementById("btnLess").addEventListener("click", function () {
-            checkAnswer(num1 < num2);
+        document.getElementById("cevap").addEventListener("click", function () {
+            console.log(sayi1, sayi2, toplam);
+            toplam = sayi1 + sayi2;
+            //checkAnswer(num1 < num2);
+            var x = document.getElementById("sayitoplami").value;
+            checkAnswer(toplam == x);
         });
 
-        document.getElementById("btnEqual").addEventListener("click", function () {
-            checkAnswer(num1 === num2);
-        });
-
-        document.getElementById("btnGreater").addEventListener("click", function () {
-            checkAnswer(num1 > num2);
-        });
 
         function checkAnswer(sign) {
+
             answerCount++;
             document.getElementById("answers-count").innerHTML = answerCount;
+
             if (sign) {
                 score += 10;
                 document.getElementById("result").innerHTML = "";
@@ -314,28 +268,26 @@
                 }, 2000);
             } else {
                 score--;
-                if (num1 > num2) {
-                    document.getElementById("result").innerHTML = `${num1} > ${num2}`;
-                } else if (num1 < num2) {
-                    document.getElementById("result").innerHTML = `${num1} < ${num2}`;
-                } else {
-                    document.getElementById("result").innerHTML = `${num1} = ${num2}`;
-                }
+                document.getElementById("result").innerHTML = `${toplam}`;
+
                 answer.classList.add("wrong");
                 setTimeout(() => {
                     answer.classList.remove("wrong");
                 }, 3000);
             }
             document.getElementById("score").innerHTML = score;
+            sayi1 = Math.rastgele(10, 99);
+            sayi2 = Math.rastgele(10, 99);
             if (score >= 100) {
                 clearInterval(timer);
                 document.getElementById("gamesScreen").classList.add("finish");
                 document.querySelector(".finishScreen").classList.add("active");
             } else {
-                num1 = parseFloat((Math.random() * 100).toFixed(3));
-                num2 = parseFloat((Math.random() * 100).toFixed(3));
-                document.getElementById("number1").innerHTML = num1;
-                document.getElementById("number2").innerHTML = num2;
+                //ikinci kez geldiğinde buraya geliyor
+                document.getElementById("number1").innerHTML = sayi1;
+                document.getElementById("number2").innerHTML = sayi2;
+
+
             }
         }
 
@@ -363,10 +315,10 @@
             timerDisplay.innerHTML = "00:00:00";
             startTimer();
             answer.classList.remove("right");
-            num1 = parseFloat((Math.random() * 100).toFixed(3));
-            num2 = parseFloat((Math.random() * 100).toFixed(3));
-            document.getElementById("number1").innerHTML = num1;
-            document.getElementById("number2").innerHTML = num2;
+            sayi1 = Math.rastgele(10, 99);
+            sayi2 = Math.rastgele(10, 99);
+            document.getElementById("number1").innerHTML = sayi1;
+            document.getElementById("number2").innerHTML = sayi2;
             document.getElementById("result").innerHTML = "";
             document.getElementById("gamesScreen").classList.remove("finish");
             document.querySelector(".finishScreen").classList.remove("active");

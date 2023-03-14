@@ -63,8 +63,7 @@
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">100.000 e Kadar
-                            Sayıları Karşılaştırın</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Bir Basamaklı Sayıların Toplanması</span>
                     </div>
                 </li>
             </ol>
@@ -73,34 +72,22 @@
             <div id="gamesScreen" class="flex flex-col sm:flex-row gap-5">
                 <div class="w-full sm:w-9/12 relative" id="answer">
                     <div class="opacity-0" id="result"></div>
-                    <h1 class="text-2xl">Hangi işaret ifadeyi doğru yapar?</h1>
+                    <h1 class="text-2xl">Toplama:</h1>
                     <div id="numbers" class="flex gap-5">
                         <p id="number1"></p>
-                        <svg width="28" height="28" 28 xmlns="http://www.w3.org/2000/svg" fill="#000000"
-                            viewBox="0 0 1920 1920">
-                            <path
-                                d="M960 1242.342c62.23 0 112.941 50.71 112.941 112.94 0 62.231-50.71 112.942-112.941 112.942-62.23 0-112.941-50.71-112.941-112.941 0-62.23 50.71-112.941 112.941-112.941Zm89.336-892.01c114.862 29.704 208.264 123.106 237.968 237.967 23.378 90.466 10.729 183.304-35.464 261.46-45.515 77.138-121.186 133.947-207.586 156.084-13.779 3.614-27.783 14.795-27.783 31.962v91.595H903.529v-91.595c0-66.183 46.306-124.235 112.716-141.29 57.6-14.795 107.971-52.743 138.353-104.131 30.833-52.292 39.19-114.635 23.378-175.85-19.651-75.67-81.204-137.223-156.875-156.875-70.927-18.183-143.435-3.953-199.341 39.304-55.68 43.143-87.642 108.31-87.642 178.673H621.176c0-105.6 47.888-203.294 131.464-268.01 83.69-64.828 191.774-86.287 296.696-59.294ZM960-.01c-529.355 0-960 430.644-960 960 0 529.355 430.645 960 960 960 529.468 0 960-430.645 960-960 0-529.356-430.532-960-960-960"
-                                fill-rule="evenodd" />
-                        </svg>
+
+                        <p>+</p>
                         <p id="number2"></p>
+                        <p>=</p>
+
+                        <input type="text" name="toplam" id="toplam" required style="border:1px solid blue;border-radius: 5px">
                     </div>
                     <div id="buttons">
-                        <button class="group duration-300 transition ease-in-out" id="btnGreater"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 1024 1024">
-                                <path class="group-hover:fill-white" fill="#000000"
-                                    d="M338.752 104.704a64 64 0 0 0 0 90.496l316.8 316.8-316.8 316.8a64 64 0 0 0 90.496 90.496l362.048-362.048a64 64 0 0 0 0-90.496L429.248 104.704a64 64 0 0 0-90.496 0z" />
-                            </svg></button>
-                        <button class="group duration-300 transition ease-in-out" id="btnLess"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 1024 1024">
-                                <path class="group-hover:fill-white" fill="#000000"
-                                    d="M685.248 104.704a64 64 0 0 1 0 90.496L368.448 512l316.8 316.8a64 64 0 0 1-90.496 90.496L232.704 557.248a64 64 0 0 1 0-90.496l362.048-362.048a64 64 0 0 1 90.496 0z" />
-                            </svg></button>
-                        <button class="group duration-300 transition ease-in-out" id="btnEqual"><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                version="1.1" width="25px" height="25px" viewBox="0 0 32 32" xml:space="preserve">
-                                <path class="group-hover:fill-white" fill="#000"
-                                    d="M6,12c0-1.104,0.896-2,2-2h16c1.104,0,2,0.896,2,2s-0.896,2-2,2H8C6.896,14,6,13.104,6,12z M24,18H8  c-1.104,0-2,0.896-2,2s0.896,2,2,2h16c1.104,0,2-0.896,2-2S25.104,18,24,18z" />
-                            </svg></button>
+                        <button class="group duration-300 transition ease-in-out" id="cevap" style="background-color: green; color: white;">
+                            
+                           Cevapla
+                        </button>
+                       
                     </div>
                 </div>
                 <div class="finishScreen w-full sm:w-3/12">
@@ -120,63 +107,69 @@
                 </div>
             </div>
         </div>
-        <div class="container px-5 sm:px-16 mt-20 mb-14 flex flex-col sm:flex-row gap-10">
+          <div class="container px-5 sm:px-16 mt-20 mb-14 flex flex-col sm:flex-row gap-10">
             <div class="w-full sm:w-9/12">
                 <h1 class="text-center font-bold text-5xl mb-14 mt-20">Konu Anlatımı</h1>
                 <div class="w3-container">
-                    <h2 class="text-3xl font-bold">&gt; Büyüktür işareti</h2>
+                   <section>
+                    <h2 class="text-3xl font-bold">(+) Toplama işareti</h2>
+                    <br>
+                    <p>Toplama işlemi aynı türden nesneleri birbirine ekleme,bir araya getirme işlemidir.Toplama işlemi sonucunda oluşan miktar artar , çoğalır , fazlalaşır , büyür . </p>
+                    <p>Toplama işlemi 2 şekilde gösterilir. </p>
+                    <p><strong>Toplanan + 2.Toplanan = Toplam</strong> şeklinde veya</p>
+                    <br>
                     <p>
-                        Bir sayının diğer sayıdan büyük olduğu matematikte <strong>&gt;</strong> işareti ile
-                        belirtilir.&gt; ( büyüktür ) işareti, işaretin solundaki sayının sağındaki sayıdan daha büyük
-                        olduğunu belirtir.Örnek kullanımlar
-                    </p>
-                    <p>"5 , 2'den büyüktür" yazmak yerine 5 &gt; 2 diye yazmak daha kısa,kolay ve anlaşılırdır.Türkçe
-                        bilmeyen biride 5'in 2'den büyük olduğunu anlayabilir.</p>
-                    <p>"5 + 2'nin sonucu 6'dan büyüktür" yazmak yerine 5 + 2 &gt; 6 diye yazılabilir.</p>
-                    <p>"8 + 4'ün sonucu 6 + 5'den büyüktür" yazmak yerine 8 + 4 &gt; 6 + 5 diye yazılabilir.</p>
-                    <h2 class="text-3xl font-bold">&lt; Küçüktür işareti</h2>
-                    <p>
-                        Bir sayının diğer sayıdan küçük olduğu matematikte <strong>&lt;</strong> işareti ile
-                        belirtilir.&lt; ( küçüktür ) işareti, işaretin solundaki sayının sağındaki sayıdan daha küçük
-                        olduğunu belirtir.Örnek kullanımlar
-                    </p>
-                    <p>"5 , 8'den küçüktür" yazmak yerine 5 &lt; 8 diye yazılabilir.</p>
-                    <p>"4 + 2'nin sonucu 9'dan küçüktür" yazmak yerine 4 + 2 &lt; 9 diye yazılabilir.</p>
-                    <p>"7 + 5'ün sonucu 9 + 8'den küçüktür" yazmak yerine 7 + 5 &lt; 9 + 8 diye yazılabilir.</p>
-                    <section><br />
-                        <h3 class="text-3xl font-bold">2 soru ve çözümü</h3>
-                        <strong>Soru</strong>
-                        <p>
-                            316 &gt; ? <br>Yukarıdaki ifadede soru işareti yerine yazılabilecek en büyük doğal sayı
-                            kaçtır?
+                    <svg width="120" height="80">
+                    <text x="25" y="15">1.Toplanan</text>
+                    <text x="25" y="45">2.Toplanan</text>
+                    <text x="45" y="80">Toplam</text>
+                    <path d="M5 57 L120 57 M5 45 L15 45 M10 40 L10 50" stroke="black" transform="matrix(1 0 0 1 0 5)" stroke-width="2"></path>
+                    </svg>
                         </p>
-                        <strong>Çözümü</strong>
-                        <ul class="list-disc ml-10">
-                            <li>&gt; işareti büyüktür işaretidir.İşaretin solundaki sayı sağındaki sayıdan büyüktür.
-                            </li>
-                            <li>Soru işareti yerine 316 dan küçük sayılar yani 315 , 314 , 313 gibi sayılar yazılabilir.
-                            </li>
-                            <li>Soruda en büyük sorulduğundan doğru cevap 315 olacaktır.</li>
-                        </ul><br />
-                        <strong>Soru</strong>
-                        <p>
-                            350 - 25 &lt; A olduğuna göre A yerine yazılabilecek en küçük doğal sayı kaçtır?
+                    <br>
+                    <p>+ işareti toplama işleminin sembolüdür. + işaretinin anlamı solundaki sayıya sağındaki sayının İLAVE EDİLMESİ , EKLENMESİ dir.Bu sembolü gördüğünüz zaman solundaki sayı ile sağındaki sayı ile toplamanız gerekir.</p>
+                    <p> = işareti solundaki sayı veya sayıların işlem sonucunun , sağındaki sayı veya işlem sonucu ile aynı , denk olduğunu belirtir. 8 + 4 = 12 veya 12 = 8 + 4 şeklindeki yazım şekilleri aynı anlamadır.Alt alta toplamada = işareti yoktur.Bunun yerine işlem çizgisi vardır.Bunun anlamıda = ile aynıdır.</p>
+
+                    <p>Bir toplama işleminde toplananların bir araya gelmesi sonucunda oluşan sayıya toplam denir.5 + 2 = 7 işleminde 7 sayısı TOPLAM dır.</p>
+                    <p>Bir toplama işleminde bir araya gelen sayıların her birine toplanan denir. 8 + 3 = 11 işleminde 8 ve 3 sayıları toplanandır.</p>
+                    <p>Toplama işleminde sıfırın etkisi yoktur.Bir sayıyı 0 ile toplarsak sonuç yine toplanan sayıdır. 15 + 0 = 15</p>
+                </section><br><br />
+                       <section>
+                        <h3 class="text-2xl font-bold">Toplama nasıl yapılır?</h3><br>
+                        
+                        <p><strong>Toplama işleminin sonucunu bulabilmek için</strong>
+                            bir toplanandan başlayıp ileri doğru sayma yapılır.Saymada söylenecek sayı sayısı diğer toplanan kadardır.Başlangıç olarak büyük toplananı almak işlemi daha hızlı yapmamızı sağlar.Örnekler
                         </p>
-                        <strong>Çözümü</strong>
+                        <br>
+                        <strong>9 + 3 işleminin sonucunu bulabilmek için:</strong>
+                        <br>
+                        <p>10 , 11 , 12 diye sayılır.Başlangıç noktamız büyük toplanan 9 ve saymada söylediğimiz sayı sayısı 3 dür.En son söylenen 12 işlemin cevabıdır.</p>
+                        
+                       
+                        <br>
+                        <strong>4 + 8 işleminin sonucunu bulabilmek için:</strong>
+                        <p>9 , 10 , 11 , 12 diye sayılır.Başlangıç noktamız büyük toplanan 8 ve saymada söylediğimiz sayı sayısı 4 tür.En son söylenen 12 işlemin cevabıdır.</p>
+                        <br>
+                        <p><strong>Toplama işlemi okunuşu:</strong>
+                        <p>Bir toplama işlemi 3 şekilde okunabilir.Örnek olarak 7 + 5 = 12 işlemi aşağıdaki şekillerde okunabilir.</p>
+                        
                         <ul>
-                            <li>&lt; işareti küçüktür işaretidir.İşaretin solundaki sayı sağındaki sayıdan küçüktür.
-                            </li>
-                            <li>350 - 25 işlemi sonucu 325 olur.</li>
-                            <li>325 &lt; A olur.</li>
-                            <li>A yerine 325 den büyük sayılar yani 326 , 327 , 328 gibi sayılar yazılabilir.</li>
-                            <li>Soruda en küçük sorulduğundan doğru cevap 324 olacaktır.</li>
-                        </ul><br />
+                            <li>
+                        Yedi arti beş eşittir oniki</li>
+                        <li>Yedi beş daha oniki eder.</li>
+                        <li>Yedi ile beşi toplarsak oniki eder.</li>
+                        </ul>
+                       
+                    
+                       <br />
                         <h1 class="text-3xl font-bold">Kaynakça</h1>
                         <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
-                            href="https://matematikproblemi.com/b%C3%BCy%C3%BCkt%C3%BCr-k%C3%BC%C3%A7%C3%BCkt%C3%BCr-i%C5%9Faretleri">https://matematikproblemi.com/büyüktür-küçüktür-işaretleri</a>
+                            href="https://matematikproblemi.com/1-s%C4%B1n%C4%B1f-toplama">https://matematikproblemi.com/1.sinif_toplama</a>
                     </section>
+
                 </div>
             </div>
+       
             <div class="w-full sm:w-3/12 text-lg">
                 <h1 class="text-2xl font-bold text-center mb-5 sm:mb-14 sm:mt-20">Bu Sayfayı Tasarlayan</h1>
                 <div class="flex gap-2 items-center justify-center">
@@ -207,7 +200,7 @@
                             </g>
                         </g>
                     </svg>
-                    Volkan Korkmaz
+                   Ayşegül SAĞLAM GÜLBAĞÇA
                 </div>
                 <div class="flex gap-2 items-center justify-center mt-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px"
@@ -259,14 +252,9 @@
                         </g>
                     </svg>
                     <a class="text-black hover:text-blue-500 transition duration-200 ease-in-out" target="_blank"
-                        href="mailto:volkanseval.vk@gmail.com">volkanseval.vk@gmail.com</a>
+                        href="mailto:aysegul.sglm@gmail.com">aysegul.sglm@gmail.com</a>
                 </div>
-                <div class="flex space-x-2 items-center justify-center mt-4">
-                    <a target="_blank" title="instagram" href="https://www.instagram.com/volkn38/"><img src="../images/socials/instagram.svg"></a>
-                    <a target="_blank" title="twitter" href="#!"><img src="../images/socials/twitter.svg"></a>
-                    <a target="_blank" title="github" href="https://github.com/Okeanos38"><img src="../images/socials/github.svg"></a>
-                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/volkan--korkmaz/"><img src="../images/socials/linkedin.svg"></a>
-                </div>
+               
             </div>
         </div>
     </section>
@@ -274,33 +262,55 @@
         <span class="block text-sm text-black sm:text-center py-6 px-5">© All Rights Reserved.</span>
     </footer>
 
-    <script>
-        // Rastgele iki ondalıklı sayı oluşturma
-        let num1 = parseFloat((Math.random() * 100).toFixed(3));
-        let num2 = parseFloat((Math.random() * 100).toFixed(3));
 
+  <script>
+
+    document.getElementById("toplam").onkeypress=function(evt){
+  
+     
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+       return false;
+    return true;
+
+      };
+          
+
+
+   
+
+    </script>
+
+    <script>
+         
+
+        // Rastgele iki ondalıklı sayı oluşturma
+        let num1 = Math.floor(Math.random() * 10);
+        let num2 = Math.floor(Math.random() * 10);
         // Sayıları ekrana yazdırma
         document.getElementById("number1").innerHTML = num1;
         document.getElementById("number2").innerHTML = num2;
 
+        let sum=0;
         // Puan değişkeni
         let score = 0;
         let answerCount = 0;
         let answer = document.getElementById("answer");
         let rightQuestionTimeOut;
 
-        // Butonların işlevleri
-        document.getElementById("btnLess").addEventListener("click", function () {
-            checkAnswer(num1 < num2);
-        });
+        // Toplama İşlemi Sonucu
+        document.getElementById("cevap").onclick=function(){
 
-        document.getElementById("btnEqual").addEventListener("click", function () {
-            checkAnswer(num1 === num2);
-        });
 
-        document.getElementById("btnGreater").addEventListener("click", function () {
-            checkAnswer(num1 > num2);
-        });
+            sum=num1+num2;
+            let sumresult=document.getElementById("toplam").value;
+                document.getElementById("toplam").value = "";
+            checkAnswer(sum==sumresult);
+
+
+        }
+        
+
 
         function checkAnswer(sign) {
             answerCount++;
@@ -314,13 +324,8 @@
                 }, 2000);
             } else {
                 score--;
-                if (num1 > num2) {
-                    document.getElementById("result").innerHTML = `${num1} > ${num2}`;
-                } else if (num1 < num2) {
-                    document.getElementById("result").innerHTML = `${num1} < ${num2}`;
-                } else {
-                    document.getElementById("result").innerHTML = `${num1} = ${num2}`;
-                }
+              document.getElementById("result").innerHTML = `${sum}`;
+           
                 answer.classList.add("wrong");
                 setTimeout(() => {
                     answer.classList.remove("wrong");
@@ -332,8 +337,8 @@
                 document.getElementById("gamesScreen").classList.add("finish");
                 document.querySelector(".finishScreen").classList.add("active");
             } else {
-                num1 = parseFloat((Math.random() * 100).toFixed(3));
-                num2 = parseFloat((Math.random() * 100).toFixed(3));
+                num1 =  Math.floor(Math.random() * 10);
+                num2 =  Math.floor(Math.random() * 10);
                 document.getElementById("number1").innerHTML = num1;
                 document.getElementById("number2").innerHTML = num2;
             }
@@ -363,8 +368,8 @@
             timerDisplay.innerHTML = "00:00:00";
             startTimer();
             answer.classList.remove("right");
-            num1 = parseFloat((Math.random() * 100).toFixed(3));
-            num2 = parseFloat((Math.random() * 100).toFixed(3));
+            num1 =  Math.floor(Math.random() * 10);
+            num2 =  Math.floor(Math.random() * 10);
             document.getElementById("number1").innerHTML = num1;
             document.getElementById("number2").innerHTML = num2;
             document.getElementById("result").innerHTML = "";

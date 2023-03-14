@@ -1,0 +1,298 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tabanlı Eğitim Tasarım Ve Uygulama İlkeleri</title>
+    <!-- Sosyal Medya Ayarları -->
+    <meta name="description" content="Web Tabanlı Eğitim Tasarım Ve Uygulama İlkeleri" />
+    <meta property="og:title" content="WTETUİ" />
+    <meta property="og:description" content="Web Tabanlı Eğitim Tasarım Ve Uygulama İlkeleri" />
+    <meta property="og:image" content="https://wtetvui.netlify.app/images/preview-wtetui.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:url" content="https://wtetvui.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!--Whatsapp & Twitter Paylaşım Ayarları-->
+    <meta property="og:image" content="https://wtetvui.netlify.app/images/preview-wp-wtetui.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta name="twitter:card" content="summary" />
+    <!-- Favicon Ayarları -->
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="theme-color" content="#ffffff">
+    <!--Style-->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="w-full flex justify-center border-b p-2">
+        <a href="/"><img width="300" src="../images/wtetui.png" alt="logo" /></a>
+    </header>
+
+    <section class="py-5 sm:bg-slate-200/30">
+
+
+        <nav class="flex container px-5 sm:px-16 mb-10" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="../"
+                        class="inline-flex items-center text-sm font-medium text-black hover:text-blue-500 transition duration-200 ease-in-out">
+                        <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                            </path>
+                        </svg>
+                        Anasayfa
+                    </a>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">1 çıkarma işlemi.</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="container px-5 sm:px-16">
+            <div id="gamesScreen" class="flex flex-col sm:flex-row gap-5">
+                <div class="w-full sm:w-9/12 relative" id="answer">
+                    <div class="opacity-0" id="result"></div>
+                    <div id="numbers" class="flex gap-5">
+                        <p id="number1"></p>
+                        <p>-</p>
+                        <p id="number2"></p>
+                        <p>=</p>
+                        <input type="number" id="sayitoplami" width="100px" height="100px" class="form-control"
+                            onFocus="if(this.value==this.defaultValue) this.value='';"
+                            style="border:1px solid blue;border-radius: 5px" required />
+                        <div id="buttons">
+                            <button class="group duration-300 transition ease-in-out" id="cevap"
+                                style="height:10px;margin-bottom: 20px;border-color: rgb(59 130 246 / var(--tw-border-opacity));">Cevapla</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="finishScreen w-full sm:w-3/12">
+                    <h1 class="text-5xl mb-14">Tebrikler Kazandınız !</h1>
+                    <div class="scoreTable">
+                        <p id="answers-count">0</p>
+                        <p id="score">0</p>
+                        <p id="timer-display">00:00:00</p>
+                    </div>
+                    <div class="button">
+                        <button type="button" id="newGame"
+                            class="bg-green-500 px-14 py-3 text-white rounded-lg font-semibold text-2xl">Yeni
+                            Oyun</button>
+                        <a href="../index.html"
+                            class="bg-red-500 px-14 py-3 text-white rounded-lg font-semibold text-2xl">Anasayfa</a>
+                    </div>
+                </div>
+            
+        
+
+        
+
+                
+
+                        
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="container px-5 sm:px-16 mt-20 mb-14 flex flex-col sm:flex-row gap-10">
+            <div class="w-full sm:w-9/12">
+                <h1 class="text-center font-bold text-5xl mb-14 mt-20">Konu Anlatımı</h1>
+                <div class="w3-container">
+                    <section>
+                    <h2 class="text-3xl font-bold">(-) Çıkarma işareti</h2>
+                    <br>
+                    <p>Çıkarma işlemi bir nesne grubundan ayırma, eksiltme, azaltmadır. Çıkarma işlemi sonucunda nesne miktarı azalır, küçülür, eksilir. </p>
+                    <p>Çıkarma işlemi 2 şekilde gösterilir. </p>
+                    <p><strong>Eksilen - Çıkan = Fark</strong> şeklinde veya</p>
+                    <br>
+                    <p><img src="https://matematikproblemi.com/Content/Konular/151-1.svg" alt="1.sınıf çıkarma" /></p>
+                    <br>
+                    <p>Bir çıkarma işleminde bir sayıdan ( eksilenden ) ayrılacak , eksiltilecek olan sayıya <strong>çıkan</strong> denir. 18 - 11 = 7 işleminde 11 sayısı çıkandır.</p>
+                    <p> Bir çıkarma işleminde işlemin sonucunda bulunan sayıya <strong>fark</strong> denir.19 - 13 = 6 işleminde 6 farktır.</p>
+                    <p><strong>-</strong> işareti çıkarma işlemi sembolüdür. - işaretinin anlamı solundaki sayıdan sağındaki sayı kadarının ayrılması , eksilmesidir.</p>
+                </section><br>
+
+                <section>
+                        <h3 class="text-2xl font-bold">Çıkarma nasıl yapılır?</h3><br>
+                        
+                        <p><strong>Çıkarma işleminin sonucunu bulabilmek için</strong>
+                            <ol >
+                                <li>1 - ya eksilenden çıkana kadar geriye doğru</li>
+                                <li>2 - ya da çıkandan eksilene kadar ileri doğru</li>
+                            </ol>saymak gereklidir. Söylenen sayı sayısı işlemin sonucudur.
+                        </p>
+                        <br>
+                        <strong>8 - 3 işleminin sonucunu bulmak için:</strong>
+                        <br>
+                        <p>7, 6, 5, 4, 3 diye başlangıçı 8 olan ( eksilen ) geriye doğru sayma</p>
+                        <p>veya 4, 5, 6, 7, 8 diye başlangıçı 3 olan ( çıkan ) ileriye doğru sayma yapılabilir. </p>
+                        <p>İki saymada da söylenen sayı sayısı 5 olduğundan dolayı cevabın 5 olduğu bulunur.</p>
+                        <br>
+                        <strong>7 - 2 işleminin sonucunu bulmak için:</strong>
+                        <p>6 , 5 , 4 , 3 , 2 diye başlangıçı 7 olan ( eksilen ) geriye doğru sayma</p>
+                        <p>veya 3 , 4 , 5 , 6 , 7 diye başlangıçı 2 olan ( çıkan ) ileriye doğru </p>
+                        <p>sayma yapılabilir.İki saymada da söylenen sayı sayısı 5 olduğundan dolayı cevabın 5 olduğu bulunur.</p>
+                        <br>
+                        <p><strong>Çıkarma işlemi okunuşu:</strong>
+                        <p>Bir çıkarma işlemi 3 şekilde okunabilir. Örnek olarak 16 - 9 = 7 işlemi aşağıdaki şekillerde okunabilir.</p>
+                        <p>Onaltı eksi dokuz eşittir yedi</p>
+                        <p>Onaltıdan dokuz çıktı yedi kaldı</p>
+                        <p>Onaltı ile dokuzun farkı yedidir</p>
+                    
+                       <br />
+                        <h1 class="text-3xl font-bold">Kaynakça</h1>
+                        <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
+                            href="https://matematikproblemi.com/1-s%C4%B1n%C4%B1f-%C3%A7%C4%B1karma">https://matematikproblemi.com/1.sinif_cikarma</a>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <span class="block text-sm text-black sm:text-center py-6 px-5">© All Rights Reserved.</span>
+    </footer>
+
+
+    
+
+    <script>
+        // Rastgele iki ondalıklı sayı oluşturma
+        Math.rastgele = function (alt, ust) {
+
+            let sayi = Math.random();
+            sayi = sayi * (ust - alt);
+            sayi = Math.floor(sayi) + alt;
+
+            return sayi;
+        }
+        
+
+        let sayi1 = Math.rastgele(1, 10);
+        let sayi2 = Math.rastgele(1, 1);
+
+        // Sayıları ekrana yazdırma
+        document.getElementById("number1").innerHTML = sayi1;
+        document.getElementById("number2").innerHTML = sayi2;
+
+        let toplam = 0;
+
+        // Puan değişkeni
+        let score = 0;
+        let answerCount = 0;
+        let answer = document.getElementById("answer");
+        let rightQuestionTimeOut;
+        let sayitoplami = 0;
+
+        // Butonların işlevleri
+        document.getElementById("cevap").addEventListener("click", function () {
+            console.log(sayi1, sayi2, toplam);
+            toplam = sayi1 - sayi2;
+            //checkAnswer(num1 < num2);
+            var x = document.getElementById("sayitoplami").value;
+            checkAnswer(toplam == x);
+        });
+
+
+        function checkAnswer(sign) {
+
+            answerCount++;
+            document.getElementById("answers-count").innerHTML = answerCount;
+
+            if (sign) {
+                score += 10;
+                document.getElementById("result").innerHTML = "";
+                answer.classList.add("right");
+                rightQuestionTimeOut = setTimeout(() => {
+                    answer.classList.remove("right");
+                }, 2000);
+            } else {
+                score--;
+                document.getElementById("result").innerHTML = `${toplam}`;
+
+                answer.classList.add("wrong");
+                setTimeout(() => {
+                    answer.classList.remove("wrong");
+                }, 3000);
+            }
+            document.getElementById("score").innerHTML = score;
+            sayi1 = Math.rastgele(1, 10);
+            sayi2 = Math.rastgele(1, 1);
+            if (score >= 100) {
+                clearInterval(timer);
+                document.getElementById("gamesScreen").classList.add("finish");
+                document.querySelector(".finishScreen").classList.add("active");
+            } else {
+                //ikinci kez geldiğinde buraya geliyor
+                document.getElementById("number1").innerHTML = sayi1;
+                document.getElementById("number2").innerHTML = sayi2;
+
+
+            }
+        }
+
+        let timerDisplay = document.getElementById("timer-display");
+        let timer;
+
+        function startTimer() {
+            let totalSeconds = 0;
+            timer = setInterval(() => {
+                ++totalSeconds;
+                const hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+                const minutes = Math.floor((totalSeconds - (hours * 3600)) / 60).toString().padStart(2, '0');
+                const seconds = (totalSeconds - (hours * 3600) - (minutes * 60)).toString().padStart(2, '0');
+                timerDisplay.innerHTML = `${hours}:${minutes}:${seconds}`
+            }, 1000);
+        }
+        startTimer();
+
+        function resetTimer() {
+            clearInterval(timer);
+            timerDisplay.innerHTML = "00:00:00";
+        }
+
+        document.getElementById("newGame").addEventListener("click", () => {
+            timerDisplay.innerHTML = "00:00:00";
+            startTimer();
+            answer.classList.remove("right");
+            sayi1 = Math.rastgele(1, 10);
+            sayi2 = Math.rastgele(1, 1);
+            document.getElementById("number1").innerHTML = sayi1;
+            document.getElementById("number2").innerHTML = sayi2;
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("gamesScreen").classList.remove("finish");
+            document.querySelector(".finishScreen").classList.remove("active");
+            score = 0;
+            document.getElementById("score").innerHTML = "0";
+            answerCount = 0;
+            document.getElementById("answers-count").innerHTML = "0";
+        });
+    </script>
+</body>
+
+</html>
