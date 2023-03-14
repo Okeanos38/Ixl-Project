@@ -73,7 +73,10 @@
             <div id="gamesScreen" class="flex flex-col sm:flex-row gap-5">
                 <div class="w-full sm:w-9/12 relative" id="answer">
                     <div class="opacity-0" id="result"></div>
-                    <h1 class="text-2xl">Hangi işaret ifadeyi doğru yapar?</h1>
+                    <div class="flex gap-3 items-center">
+                        <img width="40" onclick="speak()" src="../images/speaker.svg" alt="speaker sound icon">
+                        <h1 id="speechTitle" class="text-2xl">Hangi işaret ifadeyi doğru yapar?</h1>
+                    </div>
                     <div id="numbers" class="flex gap-5">
                         <p id="number1"></p>
                         <svg width="28" height="28" 28 xmlns="http://www.w3.org/2000/svg" fill="#000000"
@@ -262,8 +265,6 @@
                         href="mailto:volkanseval.vk@gmail.com">volkanseval.vk@gmail.com</a>
                 </div>
                 <div class="flex space-x-2 items-center justify-center mt-4">
-                    <a target="_blank" title="instagram" href="https://www.instagram.com/volkn38/"><img src="../images/socials/instagram.svg"></a>
-                    <a target="_blank" title="twitter" href="#!"><img src="../images/socials/twitter.svg"></a>
                     <a target="_blank" title="github" href="https://github.com/Okeanos38"><img src="../images/socials/github.svg"></a>
                     <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/volkan--korkmaz/"><img src="../images/socials/linkedin.svg"></a>
                 </div>
@@ -273,6 +274,7 @@
     <footer>
         <span class="block text-sm text-black sm:text-center py-6 px-5">© All Rights Reserved.</span>
     </footer>
+    <script src="../js/app.js"></script>
 
     <script>
         // Rastgele iki ondalıklı sayı oluşturma

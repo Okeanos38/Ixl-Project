@@ -39,8 +39,6 @@
     </header>
 
     <section class="py-5 sm:bg-slate-200/30">
-
-
         <nav class="flex container px-5 sm:px-16 mb-10" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
@@ -63,7 +61,8 @@
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Bir Basamaklı Sayıların Toplanması</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">100.000 e Kadar
+                            Sayıları Karşılaştırın</span>
                     </div>
                 </li>
             </ol>
@@ -72,23 +71,62 @@
             <div id="gamesScreen" class="flex flex-col sm:flex-row gap-5">
                 <div class="w-full sm:w-9/12 relative" id="answer">
                     <div class="opacity-0" id="result"></div>
-                    <h1 class="text-2xl">Toplama:</h1>
-                    <div id="numbers" class="flex gap-5">
-                        <p id="number1"></p>
+                    <h1 class="text-2xl">Onluk ve Birliklerine ayırarak gösteriniz, bu nesnelere karşılık gelen sayıyı rakamlarla yazar ve okur.
+                        </h1>
+                    <div id="imageContainer" class="grid grid-cols-10 gap-4 w-fit my-10"></div>
+                    <style>
+                        #buttons input {
+                            width: 70px;
+                            height: 70px;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            outline: none;
+                            cursor: pointer;
+                            border-radius: 10px;
+                            background: transparent;
+                            border: 1px solid blue;
+                            color: black;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 24px;
+                            transition: all 100ms linear;
+                        }
 
-                        <p>+</p>
-                        <p id="number2"></p>
-                        <p>=</p>
+                        #buttons input:hover {
+                            background: blue;
+                            border: 1px solid blue;
+                            color: white;
+                        }
 
-                        <input type="text" name="toplam" id="toplam" required style="border:1px solid blue;border-radius: 5px">
+                        #buttons input:checked {
+                            background: blue;
+                            border: 1px solid blue;
+                            color: white;
+                        }
+
+                        #buttons input:before {
+                            content: attr(value);
+                            display: inline-block;
+                            text-align: center;
+                            width: 100%;
+                        }
+                    </style>
+                    <div class="relative" id="buttons">
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn10" name="gameSelectInput" value="10" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn11" name="gameSelectInput" value="11" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn12" name="gameSelectInput" value="12" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn13" name="gameSelectInput" value="13" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn14" name="gameSelectInput" value="14" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn15" name="gameSelectInput" value="15" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn16" name="gameSelectInput" value="16" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn17" name="gameSelectInput" value="17" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn18" name="gameSelectInput" value="18" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn19" name="gameSelectInput" value="19" />
+                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn20" name="gameSelectInput" value="20" />
                     </div>
-                    <div id="buttons">
-                        <button class="group duration-300 transition ease-in-out" id="cevap" style="background-color: green; color: white;">
-                            
-                           Cevapla
-                        </button>
-                       
-                    </div>
+                    <input type="text" placeholder="asd" />
                 </div>
                 <div class="finishScreen w-full sm:w-3/12">
                     <h1 class="text-5xl mb-14">Tebrikler Kazandınız !</h1>
@@ -107,69 +145,63 @@
                 </div>
             </div>
         </div>
-          <div class="container px-5 sm:px-16 mt-20 mb-14 flex flex-col sm:flex-row gap-10">
+        <div class="container px-5 sm:px-16 mt-20 mb-14 flex flex-col sm:flex-row gap-10">
             <div class="w-full sm:w-9/12">
                 <h1 class="text-center font-bold text-5xl mb-14 mt-20">Konu Anlatımı</h1>
                 <div class="w3-container">
-                   <section>
-                    <h2 class="text-3xl font-bold">(+) Toplama işareti</h2>
-                    <br>
-                    <p>Toplama işlemi aynı türden nesneleri birbirine ekleme,bir araya getirme işlemidir.Toplama işlemi sonucunda oluşan miktar artar , çoğalır , fazlalaşır , büyür . </p>
-                    <p>Toplama işlemi 2 şekilde gösterilir. </p>
-                    <p><strong>Toplanan + 2.Toplanan = Toplam</strong> şeklinde veya</p>
-                    <br>
+                    <h2 class="text-3xl font-bold">&gt; Büyüktür işareti</h2>
                     <p>
-                    <svg width="120" height="80">
-                    <text x="25" y="15">1.Toplanan</text>
-                    <text x="25" y="45">2.Toplanan</text>
-                    <text x="45" y="80">Toplam</text>
-                    <path d="M5 57 L120 57 M5 45 L15 45 M10 40 L10 50" stroke="black" transform="matrix(1 0 0 1 0 5)" stroke-width="2"></path>
-                    </svg>
+                        Bir sayının diğer sayıdan büyük olduğu matematikte <strong>&gt;</strong> işareti ile
+                        belirtilir.&gt; ( büyüktür ) işareti, işaretin solundaki sayının sağındaki sayıdan daha büyük
+                        olduğunu belirtir.Örnek kullanımlar
+                    </p>
+                    <p>"5 , 2'den büyüktür" yazmak yerine 5 &gt; 2 diye yazmak daha kısa,kolay ve anlaşılırdır.Türkçe
+                        bilmeyen biride 5'in 2'den büyük olduğunu anlayabilir.</p>
+                    <p>"5 + 2'nin sonucu 6'dan büyüktür" yazmak yerine 5 + 2 &gt; 6 diye yazılabilir.</p>
+                    <p>"8 + 4'ün sonucu 6 + 5'den büyüktür" yazmak yerine 8 + 4 &gt; 6 + 5 diye yazılabilir.</p>
+                    <h2 class="text-3xl font-bold">&lt; Küçüktür işareti</h2>
+                    <p>
+                        Bir sayının diğer sayıdan küçük olduğu matematikte <strong>&lt;</strong> işareti ile
+                        belirtilir.&lt; ( küçüktür ) işareti, işaretin solundaki sayının sağındaki sayıdan daha küçük
+                        olduğunu belirtir.Örnek kullanımlar
+                    </p>
+                    <p>"5 , 8'den küçüktür" yazmak yerine 5 &lt; 8 diye yazılabilir.</p>
+                    <p>"4 + 2'nin sonucu 9'dan küçüktür" yazmak yerine 4 + 2 &lt; 9 diye yazılabilir.</p>
+                    <p>"7 + 5'ün sonucu 9 + 8'den küçüktür" yazmak yerine 7 + 5 &lt; 9 + 8 diye yazılabilir.</p>
+                    <section><br />
+                        <h3 class="text-3xl font-bold">2 soru ve çözümü</h3>
+                        <strong>Soru</strong>
+                        <p>
+                            316 &gt; ? <br>Yukarıdaki ifadede soru işareti yerine yazılabilecek en büyük doğal sayı
+                            kaçtır?
                         </p>
-                    <br>
-                    <p>+ işareti toplama işleminin sembolüdür. + işaretinin anlamı solundaki sayıya sağındaki sayının İLAVE EDİLMESİ , EKLENMESİ dir.Bu sembolü gördüğünüz zaman solundaki sayı ile sağındaki sayı ile toplamanız gerekir.</p>
-                    <p> = işareti solundaki sayı veya sayıların işlem sonucunun , sağındaki sayı veya işlem sonucu ile aynı , denk olduğunu belirtir. 8 + 4 = 12 veya 12 = 8 + 4 şeklindeki yazım şekilleri aynı anlamadır.Alt alta toplamada = işareti yoktur.Bunun yerine işlem çizgisi vardır.Bunun anlamıda = ile aynıdır.</p>
-
-                    <p>Bir toplama işleminde toplananların bir araya gelmesi sonucunda oluşan sayıya toplam denir.5 + 2 = 7 işleminde 7 sayısı TOPLAM dır.</p>
-                    <p>Bir toplama işleminde bir araya gelen sayıların her birine toplanan denir. 8 + 3 = 11 işleminde 8 ve 3 sayıları toplanandır.</p>
-                    <p>Toplama işleminde sıfırın etkisi yoktur.Bir sayıyı 0 ile toplarsak sonuç yine toplanan sayıdır. 15 + 0 = 15</p>
-                </section><br><br />
-                       <section>
-                        <h3 class="text-2xl font-bold">Toplama nasıl yapılır?</h3><br>
-                        
-                        <p><strong>Toplama işleminin sonucunu bulabilmek için</strong>
-                            bir toplanandan başlayıp ileri doğru sayma yapılır.Saymada söylenecek sayı sayısı diğer toplanan kadardır.Başlangıç olarak büyük toplananı almak işlemi daha hızlı yapmamızı sağlar.Örnekler
+                        <strong>Çözümü</strong>
+                        <ul class="list-disc ml-10">
+                            <li>&gt; işareti büyüktür işaretidir.İşaretin solundaki sayı sağındaki sayıdan büyüktür.
+                            </li>
+                            <li>Soru işareti yerine 316 dan küçük sayılar yani 315 , 314 , 313 gibi sayılar yazılabilir.
+                            </li>
+                            <li>Soruda en büyük sorulduğundan doğru cevap 315 olacaktır.</li>
+                        </ul><br />
+                        <strong>Soru</strong>
+                        <p>
+                            350 - 25 &lt; A olduğuna göre A yerine yazılabilecek en küçük doğal sayı kaçtır?
                         </p>
-                        <br>
-                        <strong>9 + 3 işleminin sonucunu bulabilmek için:</strong>
-                        <br>
-                        <p>10 , 11 , 12 diye sayılır.Başlangıç noktamız büyük toplanan 9 ve saymada söylediğimiz sayı sayısı 3 dür.En son söylenen 12 işlemin cevabıdır.</p>
-                        
-                       
-                        <br>
-                        <strong>4 + 8 işleminin sonucunu bulabilmek için:</strong>
-                        <p>9 , 10 , 11 , 12 diye sayılır.Başlangıç noktamız büyük toplanan 8 ve saymada söylediğimiz sayı sayısı 4 tür.En son söylenen 12 işlemin cevabıdır.</p>
-                        <br>
-                        <p><strong>Toplama işlemi okunuşu:</strong>
-                        <p>Bir toplama işlemi 3 şekilde okunabilir.Örnek olarak 7 + 5 = 12 işlemi aşağıdaki şekillerde okunabilir.</p>
-                        
+                        <strong>Çözümü</strong>
                         <ul>
-                            <li>
-                        Yedi arti beş eşittir oniki</li>
-                        <li>Yedi beş daha oniki eder.</li>
-                        <li>Yedi ile beşi toplarsak oniki eder.</li>
-                        </ul>
-                       
-                    
-                       <br />
+                            <li>&lt; işareti küçüktür işaretidir.İşaretin solundaki sayı sağındaki sayıdan küçüktür.
+                            </li>
+                            <li>350 - 25 işlemi sonucu 325 olur.</li>
+                            <li>325 &lt; A olur.</li>
+                            <li>A yerine 325 den büyük sayılar yani 326 , 327 , 328 gibi sayılar yazılabilir.</li>
+                            <li>Soruda en küçük sorulduğundan doğru cevap 324 olacaktır.</li>
+                        </ul><br />
                         <h1 class="text-3xl font-bold">Kaynakça</h1>
                         <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
-                            href="https://matematikproblemi.com/1-s%C4%B1n%C4%B1f-toplama">https://matematikproblemi.com/1.sinif_toplama</a>
+                            href="https://matematikproblemi.com/b%C3%BCy%C3%BCkt%C3%BCr-k%C3%BC%C3%A7%C3%BCkt%C3%BCr-i%C5%9Faretleri">https://matematikproblemi.com/büyüktür-küçüktür-işaretleri</a>
                     </section>
-
                 </div>
             </div>
-       
             <div class="w-full sm:w-3/12 text-lg">
                 <h1 class="text-2xl font-bold text-center mb-5 sm:mb-14 sm:mt-20">Bu Sayfayı Tasarlayan</h1>
                 <div class="flex gap-2 items-center justify-center">
@@ -200,7 +232,7 @@
                             </g>
                         </g>
                     </svg>
-                   Ayşegül SAĞLAM GÜLBAĞÇA
+                    Volkan Korkmaz
                 </div>
                 <div class="flex gap-2 items-center justify-center mt-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px"
@@ -252,9 +284,14 @@
                         </g>
                     </svg>
                     <a class="text-black hover:text-blue-500 transition duration-200 ease-in-out" target="_blank"
-                        href="mailto:aysegul.sglm@gmail.com">aysegul.sglm@gmail.com</a>
+                        href="mailto:volkanseval.vk@gmail.com">volkanseval.vk@gmail.com</a>
                 </div>
-               
+                <div class="flex space-x-2 items-center justify-center mt-4">
+                    <a target="_blank" title="github" href="https://github.com/Okeanos38"><img
+                            src="../images/socials/github.svg"></a>
+                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/volkan--korkmaz/"><img
+                            src="../images/socials/linkedin.svg"></a>
+                </div>
             </div>
         </div>
     </section>
@@ -262,57 +299,48 @@
         <span class="block text-sm text-black sm:text-center py-6 px-5">© All Rights Reserved.</span>
     </footer>
     <script src="../js/app.js"></script>
-
-
-  <script>
-
-    document.getElementById("toplam").onkeypress=function(evt){
-  
-     
-          var charCode = (evt.which) ? evt.which : event.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57))
-       return false;
-    return true;
-
-      };
-          
-
-
-   
+    <script>
 
     </script>
 
     <script>
-         
+        const countBtn = document.getElementById("countBtn");
+        const container = document.getElementById("imageContainer");
 
-        // Rastgele iki ondalıklı sayı oluşturma
-        let num1 = Math.floor(Math.random() * 10);
-        let num2 = Math.floor(Math.random() * 10);
-        // Sayıları ekrana yazdırma
-        document.getElementById("number1").innerHTML = num1;
-        document.getElementById("number2").innerHTML = num2;
+        let count = 0;
 
-        let sum=0;
-        // Puan değişkeni
+        /*Resimleri bir fonksiyon oluşturup ürettik*/
+        function resimUret() {
+            count = 0;
+            let num = Math.floor(Math.random() * 11) + 10; // 10-20 arası rasgele sayı üret
+            container.innerHTML = ""; // imageContainer öğesini temizle
+            for (let i = 0; i < num; i++) {
+                let img = document.createElement("img");
+                img.setAttribute("src", `../images/games/stockCartoonBird.png`);
+                container.appendChild(img);
+                count++;
+            }
+            console.log("Üretilen Resim Sayısı " + num)
+        }
+        //ilk açılışta resim üretilmesi için..
+        resimUret();
+
+        //Hangi butona tıkladığına bakıp onu cheackAnswer a yolluyoruz
+        document.querySelectorAll("#buttons input").forEach(selectorBtn => {
+            selectorBtn.addEventListener("click", () => {
+                console.log(`Tıklanan düğme: ${selectorBtn.value}`);
+                checkAnswer(count == selectorBtn.value)
+                console.log(count)
+            });
+        });
+
+        // Puan değişkenleri
         let score = 0;
         let answerCount = 0;
         let answer = document.getElementById("answer");
         let rightQuestionTimeOut;
 
-        // Toplama İşlemi Sonucu
-        document.getElementById("cevap").onclick=function(){
-
-
-            sum=num1+num2;
-            let sumresult=document.getElementById("toplam").value;
-                document.getElementById("toplam").value = "";
-            checkAnswer(sum==sumresult);
-
-
-        }
-        
-
-
+        //Cevap kontrol fonksiyonu
         function checkAnswer(sign) {
             answerCount++;
             document.getElementById("answers-count").innerHTML = answerCount;
@@ -325,8 +353,7 @@
                 }, 2000);
             } else {
                 score--;
-              document.getElementById("result").innerHTML = `${sum}`;
-           
+
                 answer.classList.add("wrong");
                 setTimeout(() => {
                     answer.classList.remove("wrong");
@@ -338,13 +365,11 @@
                 document.getElementById("gamesScreen").classList.add("finish");
                 document.querySelector(".finishScreen").classList.add("active");
             } else {
-                num1 =  Math.floor(Math.random() * 10);
-                num2 =  Math.floor(Math.random() * 10);
-                document.getElementById("number1").innerHTML = num1;
-                document.getElementById("number2").innerHTML = num2;
+                resimUret();
             }
         }
 
+        //Timer
         let timerDisplay = document.getElementById("timer-display");
         let timer;
 
@@ -369,11 +394,7 @@
             timerDisplay.innerHTML = "00:00:00";
             startTimer();
             answer.classList.remove("right");
-            num1 =  Math.floor(Math.random() * 10);
-            num2 =  Math.floor(Math.random() * 10);
-            document.getElementById("number1").innerHTML = num1;
-            document.getElementById("number2").innerHTML = num2;
-            document.getElementById("result").innerHTML = "";
+            resimUret();
             document.getElementById("gamesScreen").classList.remove("finish");
             document.querySelector(".finishScreen").classList.remove("active");
             score = 0;
@@ -382,6 +403,7 @@
             document.getElementById("answers-count").innerHTML = "0";
         });
     </script>
+
 </body>
 
 </html>
