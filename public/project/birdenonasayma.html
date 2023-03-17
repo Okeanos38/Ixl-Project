@@ -1,0 +1,350 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tabanlı Eğitim Tasarım Ve Uygulama İlkeleri</title>
+    <!-- Sosyal Medya Ayarları -->
+    <meta name="description" content="Web Tabanlı Eğitim Tasarım Ve Uygulama İlkeleri" />
+    <meta property="og:title" content="WTETUİ" />
+    <meta property="og:description" content="Web Tabanlı Eğitim Tasarım Ve Uygulama İlkeleri" />
+    <meta property="og:image" content="https://wtetvui.netlify.app/images/preview-wtetui.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:url" content="https://wtetvui.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!--Whatsapp & Twitter Paylaşım Ayarları-->
+    <meta property="og:image" content="https://wtetvui.netlify.app/images/preview-wp-wtetui.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta name="twitter:card" content="summary" />
+    <!-- Favicon Ayarları -->
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="theme-color" content="#ffffff">
+    <!--Style-->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="w-full flex justify-center border-b p-2">
+        <a href="/"><img width="300" src="../images/wtetui.png" alt="logo" /></a>
+    </header>
+
+    <section class="py-5 sm:bg-slate-200/30">
+        <nav class="flex container px-5 sm:px-16 mb-10" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="../"
+                        class="inline-flex items-center text-sm font-medium text-black hover:text-blue-500 transition duration-200 ease-in-out">
+                        <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                            </path>
+                        </svg>
+                        Anasayfa
+                    </a>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">10'a Kadar Sayar</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+        <div class="container px-5 sm:px-16">
+            <div id="gamesScreen" class="flex flex-col sm:flex-row gap-16">
+                <div class="w-full sm:w-9/12 relative" id="answer">
+                    <div class="opacity-0" id="result"></div>
+                    <div class="flex gap-3 items-center">
+                        
+                    </div>
+                    <div id="imageContainer" class="grid grid-cols-9 gap-4 w-fit my-10"></div>
+                    <div id="buttons">
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn10">1</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn11">2</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn12">3</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn13">4</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn14">5</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn15">6</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn16">7</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn17">8</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn18">9</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn19">10</button>
+                        
+                    </div>
+                </div>
+                <div class="finishScreen w-full sm:w-3/12">
+                    <h1 class="text-5xl mb-14">Tebrikler Kazandınız !</h1>
+                    <div class="scoreTable">
+                        <p id="answers-count">0</p>
+                        <p id="score">0</p>
+                        <p id="timer-display">00:00:00</p>
+                    </div>
+                    <div class="button">
+                        <button type="button" id="newGame"
+                            class="bg-green-500 px-14 py-3 text-white rounded-lg font-semibold text-2xl">Yeni
+                            Oyun</button>
+                        <a href="../index.html"
+                            class="bg-red-500 px-14 py-3 text-white rounded-lg font-semibold text-2xl">Anasayfa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container px-5 sm:px-16 mt-20 mb-14 flex flex-col sm:flex-row gap-10">
+            <div class="w-full sm:w-9/12">
+                <h1 class="text-center font-bold text-5xl mb-14 mt-20">Konu Anlatımı</h1>
+                <div class="w3-container">
+                    <h2 class="text-3xl font-bold">Doğal Sayılar</h2>
+                    <br />
+                    <p>Matematik işlemlerini rakamları kullanarak yaparız. Aynı zamanda yaşımızı rakamları kullanarak öğreniriz. Bu rakamlar doğal sayılardır. Şimdi doğal sayıların ne olduğunu öğrenelim ve bu konuda bilgileri alalım.</p> <br />
+                    <p>Doğal sayıları öğrendiğimiz zaman tüm matematik işlemlerini kolayca yapabiliriz. Aynı zamanda doğal sayılar ile beraber öğrenmemiz gereken bazı terimler bulunmaktadır. Şimdi bu terimlerin ne olduğuna bakalım ve sırasıyla öğrenelim.</p>
+                    <br />
+                    <p>Öncelikle doğal sayıların ne olduğunu öğrenelim.
+
+                     Doğal sayılar: Sıfırdan dokuza kadar olan sayıların her birine doğal sayı denmektedir.</p> <br />
+                    <p>Rakamlar ile bu sayıları yazmak gerekirse şu şekilde sıralama yapabiliriz; <br />(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,)<br />
+                    </p> <br />
+                    <p>Rakam: Sayıları yazmak için kullandığımız işaretlere rakam denir. Bu rakamlar sıfırdan başlar ve dokuza kadar devam eder.
+
+                        Böylece görmüş olduğunuz gibi doğal sayılar Toplamda 10 tanedir. Aynı zamanda en büyük doğal sayı ise dokuz olarak öne çıkıyor. Bu durumda en küçük doğal sayı ise sıfır rakamıdır.</p> <br />
+                    <p>Aynı zamanda iki basamaklı doğal sayılarda bulunmaktadır. Mesela bunlara bazı örnekler vermek gerekirse şu şekilde sıralamak gerçekleştirebiliriz;
+
+                        (10, 11, 12, 13, 14, 15) Bu gibi daha birçok farklı sayı söylememiz mümkün.
+                       
+                    <p><br />O zaman iki basamaklı en küçük doğal sayı, ‘’10’’ sayısıdır.</p> <br />
+                    </p>
+                    
+                    <h1 class="text-3xl font-bold">Kaynakça</h1>
+                    <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
+                        href="https://www.hurriyet.com.tr/egitim/1-sinif-matematik-dogal-sayilar-konu-anlatimi-41613552">https://www.hurriyet.com.tr/egitim/1-sinif-matematik-dogal-sayilar-konu-anlatimi-41613552</a>
+                </div>
+            </div>
+            <div class="w-full sm:w-3/12 text-lg">
+                <h1 class="text-2xl font-bold text-center mb-5 sm:mb-14 sm:mt-20">Bu Sayfayı Tasarlayan</h1>
+                <div class="flex gap-2 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px"
+                        height="20px" viewBox="0 0 24 24">
+                        <defs>
+                            <path id="user-a"
+                                d="M6,0 L10,0 C10,1.1045695 9.1045695,2 8,2 C6.8954305,2 6,1.1045695 6,0 Z M16,13.4537699 C13.3119196,14.48459 10.6263029,15 7.94314973,15 C5.2599966,15 2.61228002,14.48459 0,13.4537699 C0.534574606,9.15125664 3.18229118,7 7.94314973,7 C12.7040083,7 15.389625,9.15125664 16,13.4537699 Z" />
+                            <path id="user-c"
+                                d="M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z M1.99975067,20.0223292 C1.98741862,20.5744762 1.52981788,21.0120827 0.977670834,20.9997507 C0.425523784,20.9874186 -0.0120827307,20.5298179 0.000249326899,19.9776708 C0.145759691,13.46269 3.22368513,11 8.99994472,11 C15.0478478,11 18.1410179,13.4818866 17.9949389,20.0223292 C17.9826068,20.5744762 17.5250061,21.0120827 16.972859,20.9997507 C16.420712,20.9874186 15.9831055,20.5298179 15.9954375,19.9776708 C16.1173753,14.5181134 13.8803831,13 8.99994472,13 C4.37762816,13 2.12225712,14.53731 1.99975067,20.0223292 Z" />
+                        </defs>
+                        <g fill="none" fill-rule="evenodd" transform="translate(3 1)">
+                            <g transform="translate(1 5)">
+                                <mask id="user-b" fill="#ffffff">
+                                    <use xlink:href="#user-a" />
+                                </mask>
+                                <use fill="#D8D8D8" xlink:href="#user-a" />
+                                <g fill="#FFA0A0" mask="url(#user-b)">
+                                    <rect width="24" height="24" transform="translate(-4 -6)" />
+                                </g>
+                            </g>
+                            <mask id="user-d" fill="#ffffff">
+                                <use xlink:href="#user-c" />
+                            </mask>
+                            <use fill="#000000" fill-rule="nonzero" xlink:href="#user-c" />
+                            <g fill="#7600FF" mask="url(#user-d)">
+                                <rect width="24" height="24" transform="translate(-3 -1)" />
+                            </g>
+                        </g>
+                    </svg>
+                    Gizem BAŞARI
+                </div>
+                <div class="flex gap-2 items-center justify-center mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px"
+                        height="20px" version="1.1" id="_x36_" viewBox="0 0 512 512" xml:space="preserve">
+                        <g>
+                            <polygon style="fill:#C0874A;"
+                                points="511.401,173.663 502.513,179.269 458.244,207.066 268.606,326.073 266.213,327.652    265.699,327.968 256.043,334.048 255.701,334.207 247.753,329.232 246.299,328.284 66.659,215.516 54.439,207.856 0.598,174.057    0,173.663 54.439,139.469 249.548,16.988 261.854,16.988 458.244,140.258 464.74,144.365  " />
+                            <path style="fill:#69B25F;"
+                                d="M467.859,16.065v383.862c0,8.807-7.88,15.985-17.641,15.985H62.29   c-9.671,0-17.551-7.178-17.551-15.985V16.065C44.739,7.176,52.619,0,62.29,0h387.928C459.978,0,467.859,7.176,467.859,16.065z" />
+                            <g>
+                                <g>
+                                    <rect x="110.787" y="75.101" style="fill:#A2CC86;" width="190.508"
+                                        height="25.378" />
+                                    <rect x="110.787" y="71.093" style="fill:#53A654;" width="190.508"
+                                        height="25.378" />
+                                </g>
+                                <g>
+                                    <rect x="110.787" y="214.682" style="fill:#A2CC86;" width="289.501"
+                                        height="25.378" />
+                                    <rect x="110.787" y="210.675" style="fill:#53A654;" width="289.501"
+                                        height="25.378" />
+                                </g>
+                                <g>
+                                    <rect x="110.787" y="284.473" style="fill:#A2CC86;" width="289.501"
+                                        height="25.378" />
+                                    <rect x="110.787" y="280.466" style="fill:#53A654;" width="289.501"
+                                        height="25.378" />
+                                </g>
+                                <g>
+                                    <rect x="110.787" y="144.891" style="fill:#A2CC86;" width="289.501"
+                                        height="25.378" />
+                                    <rect x="110.787" y="140.884" style="fill:#53A654;" width="289.501"
+                                        height="25.378" />
+                                </g>
+                            </g>
+                            <polygon style="fill:#F0BA7D;"
+                                points="256.299,322.118 253.308,323.881 195.45,357.662 188.356,361.847 12.392,464.583    0.598,471.413 0.598,172.824 71.446,214.169 246.642,316.464 248.009,317.272 256.043,321.971  " />
+                            <g>
+                                <path style="fill:#E5A864;"
+                                    d="M510.236,167.293c0.97-0.567,1.764-0.111,1.764,1.013v294.576c0,1.124-0.019,2.027-0.043,2.006    s-0.139-0.103-0.257-0.184c-0.118-0.081-0.291-0.197-0.385-0.257c-0.094-0.061-0.19-0.11-0.214-0.11    c-0.024,0-0.837-0.464-1.807-1.03L265.498,320.993c-0.97-0.566-2.556-1.497-3.524-2.068l-0.839-0.495    c-0.968-0.571-2.452-1.451-3.298-1.956c-0.846-0.505-0.743-1.379,0.229-1.944l6.209-3.604c0.972-0.564,1.825-1.059,1.895-1.099    c0.071-0.04,0.186-0.107,0.257-0.147c0.071-0.04,0.923-0.535,1.895-1.1l5.44-3.161c0.972-0.564,2.56-1.49,3.531-2.057    L510.236,167.293z" />
+                            </g>
+                            <circle style="opacity:0.68;fill:#EEF3CA;" cx="377.142" cy="75.101" r="38.186" />
+                            <path style="fill:#C0874A;"
+                                d="M512,425.251v45.808h-0.513l-7.35,0.342H27.689l-0.341-7.094   c8.632-5.896,20.082-13.845,27.518-18.887l1.025-0.684l24.956-17.178l38.97-26.92l11.28-7.777l118.365-81.615l7.947-5.556   c1.88-1.195,4.017-2.222,6.324-2.904c2.735-0.941,5.726-1.539,8.717-1.795c1.025-0.086,1.965-0.171,2.991-0.086   c1.025-0.171,2.052-0.171,3.077-0.171c2.735-0.085,5.385,0.171,7.948,0.683c2.734,0.513,5.213,1.369,7.435,2.564l89.735,49.91   l44.354,24.697l11.538,6.41l41.79,23.245l27.518,15.298c0.77,0.428,1.624,0.855,2.479,1.368   C511.487,424.995,511.743,425.166,512,425.251z" />
+                            <path style="fill:#ECB168;"
+                                d="M512,441.404v29.997H0.598v-29.997c8.974-5.471,20.768-12.905,28.459-17.52l1.025-0.684   l25.724-15.98l40.252-24.955l11.623-7.264l122.125-75.805l8.204-5.127c4.273-2.564,9.828-3.846,15.298-3.932   c1.025-0.086,1.965-0.086,2.991,0c1.026-0.086,2.051-0.086,3.077,0c2.393,0,4.701,0.257,6.923,0.769   c3.077,0.599,5.896,1.71,8.29,3.163l11.879,7.349l75.377,46.834l43.073,26.75l11.196,7.007l40.68,25.212l26.748,16.665   c0.77,0.428,1.539,0.854,2.393,1.367c5.47,3.505,12.477,7.864,19.058,11.88C507.385,438.669,509.778,440.122,512,441.404z" />
+                            <path style="opacity:0.2;fill:#BADB9E;"
+                                d="M467.816,16.066v4.273c0-8.887-7.863-16.066-17.605-16.066H62.301   c-9.656,0-17.604,7.178-17.604,16.066v-4.273C44.696,7.178,52.645,0,62.301,0h387.911C459.953,0,467.816,7.178,467.816,16.066z" />
+                        </g>
+                    </svg>
+                    <a class="text-black hover:text-blue-500 transition duration-200 ease-in-out" target="_blank"
+                        href="mailto:volkanseval.vk@gmail.com">basarigizem@gmail.com</a>
+                </div>
+                <div class="flex space-x-2 items-center justify-center mt-4">
+                    <a target="_blank" title="github" href="https://github.com/gizembasari"><img
+                            src="../images/socials/github.svg"></a>
+                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/gizembasari/"><img
+                            src="../images/socials/linkedin.svg"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <span class="block text-sm text-black sm:text-center py-6 px-5">© All Rights Reserved.</span>
+    </footer>
+    <script src="../js/app.js"></script>
+    <script>
+        const countBtn = document.getElementById("countBtn");
+        const container = document.getElementById("imageContainer");
+
+        let count = 0;
+
+        /*Resimleri bir fonksiyon oluşturup ürettik*/
+        function resimUret() {
+            count = 0;
+            let num = Math.floor(Math.random() * 10) + 1; // 10-20 arası rasgele sayı üret
+            container.innerHTML = ""; // imageContainer öğesini temizle
+            var randomSayi = Math.floor(Math.random() * 14) + 1;
+            console.log(randomSayi);
+            for (let i = 0; i < num; i++) {
+                let img = document.createElement("img");
+
+                img.setAttribute("src", `../images/games/image${randomSayi}.png`);
+                container.appendChild(img);
+                count++;
+            }
+            console.log("Üretilen Resim Sayısı " + num)
+        }
+        //ilk açılışta resim üretilmesi için..
+        resimUret();
+
+        //Hangi butona tıkladığına bakıp onu cheackAnswer a yolluyoruz
+        document.querySelectorAll("#buttons button").forEach(selectorBtn => {
+            selectorBtn.addEventListener("click", () => {
+                console.log(`Tıklanan düğme: ${selectorBtn.innerHTML}`);
+                checkAnswer(count == selectorBtn.innerHTML)
+                console.log(count)
+            });
+        });
+
+        // Puan değişkenleri
+        let score = 0;
+        let answerCount = 0;
+        let answer = document.getElementById("answer");
+        let rightQuestionTimeOut;
+
+        //Cevap kontrol fonksiyonu
+        function checkAnswer(sign) {
+            answerCount++;
+            document.getElementById("answers-count").innerHTML = answerCount;
+            if (sign) {
+                score += 10;
+                document.getElementById("result").innerHTML = "";
+                answer.classList.add("right");
+                rightQuestionTimeOut = setTimeout(() => {
+                    answer.classList.remove("right");
+                }, 2000);
+            } else {
+                score--;
+
+                answer.classList.add("wrong");
+                setTimeout(() => {
+                    answer.classList.remove("wrong");
+                }, 3000);
+            }
+            document.getElementById("score").innerHTML = score;
+            if (score >= 100) {
+                clearInterval(timer);
+                document.getElementById("gamesScreen").classList.add("finish");
+                document.querySelector(".finishScreen").classList.add("active");
+            } else {
+                resimUret();
+            }
+        }
+
+        //Timer
+        let timerDisplay = document.getElementById("timer-display");
+        let timer;
+
+        function startTimer() {
+            let totalSeconds = 0;
+            timer = setInterval(() => {
+                ++totalSeconds;
+                const hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+                const minutes = Math.floor((totalSeconds - (hours * 3600)) / 60).toString().padStart(2, '0');
+                const seconds = (totalSeconds - (hours * 3600) - (minutes * 60)).toString().padStart(2, '0');
+                timerDisplay.innerHTML = `${hours}:${minutes}:${seconds}`
+            }, 1000);
+        }
+        startTimer();
+
+        function resetTimer() {
+            clearInterval(timer);
+            timerDisplay.innerHTML = "00:00:00";
+        }
+
+        document.getElementById("newGame").addEventListener("click", () => {
+            timerDisplay.innerHTML = "00:00:00";
+            startTimer();
+            answer.classList.remove("right");
+            resimUret();
+            document.getElementById("gamesScreen").classList.remove("finish");
+            document.querySelector(".finishScreen").classList.remove("active");
+            score = 0;
+            document.getElementById("score").innerHTML = "0";
+            answerCount = 0;
+            document.getElementById("answers-count").innerHTML = "0";
+        });
+    </script>
+
+</body>
+
+</html>
