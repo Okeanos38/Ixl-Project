@@ -31,6 +31,19 @@
     <meta name="theme-color" content="#ffffff">
     <!--Style-->
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .kutu-uyari {
+    color: #a42222;
+    background-color: rgb(193 82 82 / 5%);
+    border-color: #a4222254;
+}
+.kutu {
+    margin: 10px 0px 20px 0px;
+    padding: 20px 30px 20px 30px;
+    position: relative;
+    border: 2px solid;
+    }
+    </style>
 </head>
 
 <body>
@@ -39,6 +52,8 @@
     </header>
 
     <section class="py-5 sm:bg-slate-200/30">
+
+
         <nav class="flex container px-5 sm:px-16 mb-10" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center">
@@ -61,42 +76,40 @@
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">10'a Kadar Sayar</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Sayıları 10 Sayıyı İle Karşılaştırın.</span>
                     </div>
                 </li>
             </ol>
         </nav>
         <div class="container px-5 sm:px-16">
-            <div id="gamesScreen" class="flex flex-col sm:flex-row gap-16">
+            <div id="gamesScreen" class="flex flex-col sm:flex-row gap-5">
                 <div class="w-full sm:w-9/12 relative" id="answer">
                     <div class="opacity-0" id="result"></div>
                     <div class="flex gap-3 items-center">
                         <img width="40" onclick="speak()" src="../images/speaker.svg" alt="speaker sound icon">
-                        <h1 id="speechTitle" class="text-2xl">Aşağıda kaç tane hayvan vardır ?</h1>
+                        <h1 id="speechTitle" class="text-2xl">Sayı 10'dan büyükse &gt;(büyüktür) işaretini, küçükse &lt;(küçüktür) işaretini seçiniz.</h1>
                     </div>
-                    <div id="imageContainer" class="grid grid-cols-9 gap-4 w-fit my-10"></div>
+                    <div id="numbers" class="flex gap-5">
+                        <p id="number1"></p>
+                        <svg width="28" height="28" 28 xmlns="http://www.w3.org/2000/svg" fill="#000000"
+                            viewBox="0 0 1920 1920">
+                            <path
+                                d="M960 1242.342c62.23 0 112.941 50.71 112.941 112.94 0 62.231-50.71 112.942-112.941 112.942-62.23 0-112.941-50.71-112.941-112.941 0-62.23 50.71-112.941 112.941-112.941Zm89.336-892.01c114.862 29.704 208.264 123.106 237.968 237.967 23.378 90.466 10.729 183.304-35.464 261.46-45.515 77.138-121.186 133.947-207.586 156.084-13.779 3.614-27.783 14.795-27.783 31.962v91.595H903.529v-91.595c0-66.183 46.306-124.235 112.716-141.29 57.6-14.795 107.971-52.743 138.353-104.131 30.833-52.292 39.19-114.635 23.378-175.85-19.651-75.67-81.204-137.223-156.875-156.875-70.927-18.183-143.435-3.953-199.341 39.304-55.68 43.143-87.642 108.31-87.642 178.673H621.176c0-105.6 47.888-203.294 131.464-268.01 83.69-64.828 191.774-86.287 296.696-59.294ZM960-.01c-529.355 0-960 430.644-960 960 0 529.355 430.645 960 960 960 529.468 0 960-430.645 960-960 0-529.356-430.532-960-960-960"
+                                fill-rule="evenodd" />
+                        </svg>
+                        <p id="number2">10</p>
+                    </div>
                     <div id="buttons">
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn10">1</button>
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn11">2</button>
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn12">3</button>
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn13">4</button>
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn14">5</button>
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn15">6</button>
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn16">7</button>
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn17">8</button>
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn18">9</button>
-                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn19">10</button>
-                        
+                        <button class="group duration-300 transition ease-in-out" id="Büyük"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 1024 1024">
+                                <path class="group-hover:fill-white" fill="#000000"
+                                    d="M338.752 104.704a64 64 0 0 0 0 90.496l316.8 316.8-316.8 316.8a64 64 0 0 0 90.496 90.496l362.048-362.048a64 64 0 0 0 0-90.496L429.248 104.704a64 64 0 0 0-90.496 0z" />
+                            </svg></button>
+                        <button class="group duration-300 transition ease-in-out" id="Kücük"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 1024 1024">
+                                <path class="group-hover:fill-white" fill="#000000"
+                                    d="M685.248 104.704a64 64 0 0 1 0 90.496L368.448 512l316.8 316.8a64 64 0 0 1-90.496 90.496L232.704 557.248a64 64 0 0 1 0-90.496l362.048-362.048a64 64 0 0 1 90.496 0z" />
+                            </svg></button>
                     </div>
                 </div>
                 <div class="finishScreen w-full sm:w-3/12">
@@ -120,29 +133,25 @@
             <div class="w-full sm:w-9/12">
                 <h1 class="text-center font-bold text-5xl mb-14 mt-20">Konu Anlatımı</h1>
                 <div class="w3-container">
-                    <h2 class="text-3xl font-bold">Doğal Sayılar</h2>
-                    <br />
-                    <p>Matematik işlemlerini rakamları kullanarak yaparız. Aynı zamanda yaşımızı rakamları kullanarak öğreniriz. Bu rakamlar doğal sayılardır. Şimdi doğal sayıların ne olduğunu öğrenelim ve bu konuda bilgileri alalım.</p> <br />
-                    <p>Doğal sayıları öğrendiğimiz zaman tüm matematik işlemlerini kolayca yapabiliriz. Aynı zamanda doğal sayılar ile beraber öğrenmemiz gereken bazı terimler bulunmaktadır. Şimdi bu terimlerin ne olduğuna bakalım ve sırasıyla öğrenelim.</p>
-                    <br />
-                    <p>Öncelikle doğal sayıların ne olduğunu öğrenelim.
-
-                     Doğal sayılar: Sıfırdan dokuza kadar olan sayıların her birine doğal sayı denmektedir.</p> <br />
-                    <p>Rakamlar ile bu sayıları yazmak gerekirse şu şekilde sıralama yapabiliriz; <br />(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,)<br />
-                    </p> <br />
-                    <p>Rakam: Sayıları yazmak için kullandığımız işaretlere rakam denir. Bu rakamlar sıfırdan başlar ve dokuza kadar devam eder.
-
-                        Böylece görmüş olduğunuz gibi doğal sayılar Toplamda 10 tanedir. Aynı zamanda en büyük doğal sayı ise dokuz olarak öne çıkıyor. Bu durumda en küçük doğal sayı ise sıfır rakamıdır.</p> <br />
-                    <p>Aynı zamanda iki basamaklı doğal sayılarda bulunmaktadır. Mesela bunlara bazı örnekler vermek gerekirse şu şekilde sıralamak gerçekleştirebiliriz;
-
-                        (10, 11, 12, 13, 14, 15) Bu gibi daha birçok farklı sayı söylememiz mümkün.
-                       
-                    <p><br />O zaman iki basamaklı en küçük doğal sayı, ‘’10’’ sayısıdır.</p> <br />
-                    </p>
-                    
-                    <h1 class="text-3xl font-bold">Kaynakça</h1>
-                    <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
-                        href="https://www.hurriyet.com.tr/egitim/1-sinif-matematik-dogal-sayilar-konu-anlatimi-41613552">https://www.hurriyet.com.tr/egitim/1-sinif-matematik-dogal-sayilar-konu-anlatimi-41613552</a>
+                    <h2 class="text-3xl font-bold">Karşılaştırma sembolleri</h2>
+                    <p>
+                       Birden fazla sayıyı karşılaştırırken sayılar arasındaki ilişkileri göstermek için aşağıdaki sembolleri kullanırız.
+                    </p><br>
+                    <figure class="aligncenter">
+                        <img decoding="async" loading="lazy" width="700" height="63" src="https://www.ilkokuldokumanlari.com/wp-content/uploads/sayilari-karsilastirma-sembolleir.jpg" alt="Sayıları Karşılaştırma Sembolleri" class="wp-image-7733" srcset="https://www.ilkokuldokumanlari.com/wp-content/uploads/sayilari-karsilastirma-sembolleir.jpg 700w, https://www.ilkokuldokumanlari.com/wp-content/uploads/sayilari-karsilastirma-sembolleir-300x27.jpg 300w" sizes="(max-width: 700px) 100vw, 700px">
+                    </figure>
+                    <p class="kutu kutu-uyari">Kolay hatırlayabilmek için sembolleri <strong>“I<span style="color: #ff0000;">&lt;</span>üçüktür</strong> ve <strong>I<span style="color: #ff0000;">&gt;</span>üyüktür”</strong> şeklinde kodlayabiliriz.</p>
+                    <p>Yani yukarıda saydığımız semboller hangi sayının büyük olduğunu ya da hangi sayının küçük olduğunu anlatmaktadır. Mesela bir örnek yazalım ve bu sembolleri nasıl kullanıldığını inceleyelim.</p>
+                    <p>15 > 10.</p>
+                    <p>Burada 15 sayısının 10 sayısından daha büyük olduğunu gösterdik. 
+                        <br><b>Okunuşu ise 15 büyüktür 10’dan şeklinde olacaktır.</b></p>
+                    <section><br />
+                        <h1 class="text-3xl font-bold">Kaynakça</h1>
+                        <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
+                            href="https://www.hurriyet.com.tr/egitim/3-sinif-matematik-sayilari-karsilastirma-ve-siralama-konu-anlatimi-41633057">kaynak-1</a>
+                            <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
+                            href="https://www.ilkokuldokumanlari.com/3-sinif-sayilari-karsilastirma/">kaynak-2</a>
+                    </section>
                 </div>
             </div>
             <div class="w-full sm:w-3/12 text-lg">
@@ -175,7 +184,7 @@
                             </g>
                         </g>
                     </svg>
-                    Gizem BAŞARI
+                    Süheyla Korkmaz
                 </div>
                 <div class="flex gap-2 items-center justify-center mt-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px"
@@ -227,64 +236,44 @@
                         </g>
                     </svg>
                     <a class="text-black hover:text-blue-500 transition duration-200 ease-in-out" target="_blank"
-                        href="mailto:volkanseval.vk@gmail.com">basarigizem@gmail.com</a>
-                </div>
-                <div class="flex space-x-2 items-center justify-center mt-4">
-                    <a target="_blank" title="github" href="https://github.com/gizembasari"><img
-                            src="../images/socials/github.svg"></a>
-                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/gizembasari/"><img
-                            src="../images/socials/linkedin.svg"></a>
+                        href="mailto:suheylakorkmaz07@gmail.com">suheylakorkmaz07@gmail.com</a>
                 </div>
             </div>
         </div>
     </section>
     <footer>
-        <span class="block text-sm text-black sm:text-center py-6 px-5">© All Rights Reserved.</span>
+        <span class="block text-sm text-black sm:text-center py-6 px-5">© Süheyla KORKMAZ
+        </span>
     </footer>
     <script src="../js/app.js"></script>
     <script>
-        const countBtn = document.getElementById("countBtn");
-        const container = document.getElementById("imageContainer");
-
-        let count = 0;
-
-        /*Resimleri bir fonksiyon oluşturup ürettik*/
-        function resimUret() {
-            count = 0;
-            let num = Math.floor(Math.random() * 10) + 1; // 10-20 arası rasgele sayı üret
-            container.innerHTML = ""; // imageContainer öğesini temizle
-            var randomSayi = Math.floor(Math.random() * 14) + 1;
-            console.log(randomSayi);
-            for (let i = 0; i < num; i++) {
-                let img = document.createElement("img");
-
-                img.setAttribute("src", `../images/games/image${randomSayi}.png`);
-                container.appendChild(img);
-                count++;
-            }
-            console.log("Üretilen Resim Sayısı " + num)
-        }
-        //ilk açılışta resim üretilmesi için..
-        resimUret();
-
-        //Hangi butona tıkladığına bakıp onu cheackAnswer a yolluyoruz
-        document.querySelectorAll("#buttons button").forEach(selectorBtn => {
-            selectorBtn.addEventListener("click", () => {
-                console.log(`Tıklanan düğme: ${selectorBtn.innerHTML}`);
-                checkAnswer(count == selectorBtn.innerHTML)
-                console.log(count)
-            });
-        });
-
-        // Puan değişkenleri
+       // Rastgele bir sayı oluşturma
+     var sayi1;
+        do{
+        sayi1=Math.floor(Math.random() * 20);
+          }while(sayi1==10)
+         
+        document.getElementById("number1").innerHTML = sayi1;
+         document.getElementById("number2").innerHTML = 10;
+         let x = 10;
+        // Puan değişkeni
         let score = 0;
         let answerCount = 0;
         let answer = document.getElementById("answer");
         let rightQuestionTimeOut;
 
-        //Cevap kontrol fonksiyonu
+        // Butonların işlevleri
+        document.getElementById("Kücük").onclick=function() {
+            checkAnswer(sayi1 < x);
+        };
+       
+        document.getElementById("Büyük").onclick=function () {
+            checkAnswer(sayi1 >x);
+        };
+
         function checkAnswer(sign) {
             answerCount++;
+            //cevap sayısını buradan alıyor answerCount
             document.getElementById("answers-count").innerHTML = answerCount;
             if (sign) {
                 score += 10;
@@ -295,7 +284,11 @@
                 }, 2000);
             } else {
                 score--;
-
+                if (sayi1 > x) {
+                    document.getElementById("result").innerHTML = `${sayi1} > ${x}`;
+                } else if (sayi1 < x) {
+                    document.getElementById("result").innerHTML = `${sayi1} < ${x}`;
+                } 
                 answer.classList.add("wrong");
                 setTimeout(() => {
                     answer.classList.remove("wrong");
@@ -307,11 +300,23 @@
                 document.getElementById("gamesScreen").classList.add("finish");
                 document.querySelector(".finishScreen").classList.add("active");
             } else {
-                resimUret();
+                let y=sayi1;
+                do{
+                  sayi1=Math.floor(Math.random() * 20);
+                 }while(sayi1==10) 
+                 let z=sayi1;
+                 if(y==z)
+                 {
+                    do{
+                  sayi1=Math.floor(Math.random() * 20);
+                  }while(sayi1==10) 
+                 }
+                x=10;
+                document.getElementById("number1").innerHTML = sayi1;
+                document.getElementById("number2").innerHTML = 10;
             }
         }
 
-        //Timer
         let timerDisplay = document.getElementById("timer-display");
         let timer;
 
@@ -336,7 +341,13 @@
             timerDisplay.innerHTML = "00:00:00";
             startTimer();
             answer.classList.remove("right");
-            resimUret();
+            do{
+             sayi1=Math.floor(Math.random() * 20);
+          }while(sayi1==10)
+          x=10;
+            document.getElementById("number1").innerHTML = sayi1;
+            document.getElementById("number2").innerHTML = 10;
+            document.getElementById("result").innerHTML = "";
             document.getElementById("gamesScreen").classList.remove("finish");
             document.querySelector(".finishScreen").classList.remove("active");
             score = 0;
@@ -345,7 +356,6 @@
             document.getElementById("answers-count").innerHTML = "0";
         });
     </script>
-
 </body>
 
 </html>

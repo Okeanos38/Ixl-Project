@@ -277,7 +277,15 @@
       };
           
 
+  document.getElementById("toplam").onkeypress=function(e)
+    {
 
+        if(e.key==="Enter")
+        {
+        e.preventDefault();
+        document.getElementById("cevap").click();
+    }
+};
    
 
     </script>

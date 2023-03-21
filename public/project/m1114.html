@@ -33,7 +33,11 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
+
+
+
 <body>
+
     <header class="w-full flex justify-center border-b p-2">
         <a href="/"><img width="300" src="../images/wtetui.png" alt="logo" /></a>
     </header>
@@ -61,44 +65,45 @@
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">10'a Kadar Sayar</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">20'ye kadar  2'li ileri-geri ritmik sayma</span>
                     </div>
                 </li>
             </ol>
         </nav>
+
         <div class="container px-5 sm:px-16">
             <div id="gamesScreen" class="flex flex-col sm:flex-row gap-16">
                 <div class="w-full sm:w-9/12 relative" id="answer">
                     <div class="opacity-0" id="result"></div>
                     <div class="flex gap-3 items-center">
                         <img width="40" onclick="speak()" src="../images/speaker.svg" alt="speaker sound icon">
-                        <h1 id="speechTitle" class="text-2xl">Aşağıda kaç tane hayvan vardır ?</h1>
+                        <h1 id="speechTitle" class="text-2xl">Diğer kuşun kaçıncı sırada olduğunu bulun?</h1>
                     </div>
                     <div id="imageContainer" class="grid grid-cols-9 gap-4 w-fit my-10"></div>
                     <div id="buttons">
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn10">1</button>
+                            id="btn1">2.</button>
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn11">2</button>
+                            id="btn2">4.</button>
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn12">3</button>
+                            id="btn3">6.</button>
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn13">4</button>
+                            id="btn4">8.</button>
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn14">5</button>
+                            id="btn5">10.</button>
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn15">6</button>
+                            id="btn6">12.</button>
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn16">7</button>
+                            id="btn7">14.</button>
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn17">8</button>
+                            id="btn8">16.</button>
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn18">9</button>
+                            id="btn9">18.</button>
                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
-                            id="btn19">10</button>
-                        
+                            id="btn10">20.</button>                        
                     </div>
                 </div>
+
                 <div class="finishScreen w-full sm:w-3/12">
                     <h1 class="text-5xl mb-14">Tebrikler Kazandınız !</h1>
                     <div class="scoreTable">
@@ -116,35 +121,49 @@
                 </div>
             </div>
         </div>
+
+
+
         <div class="container px-5 sm:px-16 mt-20 mb-14 flex flex-col sm:flex-row gap-10">
             <div class="w-full sm:w-9/12">
+                <br><br><br><br><br><br><br><br>
                 <h1 class="text-center font-bold text-5xl mb-14 mt-20">Konu Anlatımı</h1>
                 <div class="w3-container">
-                    <h2 class="text-3xl font-bold">Doğal Sayılar</h2>
+                    <h2 class="text-3xl font-bold">İkişer Ritmik Sayma Sayıları</h2>
                     <br />
-                    <p>Matematik işlemlerini rakamları kullanarak yaparız. Aynı zamanda yaşımızı rakamları kullanarak öğreniriz. Bu rakamlar doğal sayılardır. Şimdi doğal sayıların ne olduğunu öğrenelim ve bu konuda bilgileri alalım.</p> <br />
-                    <p>Doğal sayıları öğrendiğimiz zaman tüm matematik işlemlerini kolayca yapabiliriz. Aynı zamanda doğal sayılar ile beraber öğrenmemiz gereken bazı terimler bulunmaktadır. Şimdi bu terimlerin ne olduğuna bakalım ve sırasıyla öğrenelim.</p>
-                    <br />
-                    <p>Öncelikle doğal sayıların ne olduğunu öğrenelim.
 
-                     Doğal sayılar: Sıfırdan dokuza kadar olan sayıların her birine doğal sayı denmektedir.</p> <br />
-                    <p>Rakamlar ile bu sayıları yazmak gerekirse şu şekilde sıralama yapabiliriz; <br />(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,)<br />
+                    <p>2’şer ritmik sayma 100’ e kadar, ileri ya da geriye doğru ilerleyen bir kurala bağlı olarak yapılan işlemleridir. 
+                    İleriye doğru da olsa geriye doğru da sayma işlemi yapıyorsanız, sayı kuralı bozulmamalıdır. İleriye doğru sayarken ilk sayıya+ 2 ekleyerek devam edilir, 
+                    geriye doğru sayarken - 2 şeklinde devam edilmesi gerekmektedir.
                     </p> <br />
-                    <p>Rakam: Sayıları yazmak için kullandığımız işaretlere rakam denir. Bu rakamlar sıfırdan başlar ve dokuza kadar devam eder.
 
-                        Böylece görmüş olduğunuz gibi doğal sayılar Toplamda 10 tanedir. Aynı zamanda en büyük doğal sayı ise dokuz olarak öne çıkıyor. Bu durumda en küçük doğal sayı ise sıfır rakamıdır.</p> <br />
-                    <p>Aynı zamanda iki basamaklı doğal sayılarda bulunmaktadır. Mesela bunlara bazı örnekler vermek gerekirse şu şekilde sıralamak gerçekleştirebiliriz;
-
-                        (10, 11, 12, 13, 14, 15) Bu gibi daha birçok farklı sayı söylememiz mümkün.
-                       
-                    <p><br />O zaman iki basamaklı en küçük doğal sayı, ‘’10’’ sayısıdır.</p> <br />
-                    </p>
+                    <p>Ritmik sayılar, ileri ya da geriye doğru bir kural dahlinde devam eden sayılardır. 
+                    2’ şer ritmik sayma 100’e kadar 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50…şeklinde devam etmektedir. </p>
+                    <br />
+                    <h2 class="text-3xl font-bold">2’şer Ritmik Sayma 100’e Kadar Nasıl Yapılır?</h2>
                     
+
+                    
+                    <p>2’şer ritmik sayma 100’e kadar ilk sayıya + 2 ilave edilerek, kurala uygun şekilde devam etmektedir. 
+                    Ritmik sayma işlemleri ileriye doğru da olsa geriye doğru da olsa kural bozulmamalıdır. 
+                    2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 
+                    50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100 olarak devam etmektedir. </p><br />
+                    <h2 class="text-3xl font-bold"> İkişer Ritmik Sayma Sayıları </h2>
+
+                    <p>Ritmik sayılar ileriye doğru da olsa geriye doğru da olsa mutlaka bir düzen içinde devam etmelidir. 
+                    İkişer ritmik sayma; 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22 şeklinde devam etmektedir.</p>
+                    <br>
+                   
                     <h1 class="text-3xl font-bold">Kaynakça</h1>
                     <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
-                        href="https://www.hurriyet.com.tr/egitim/1-sinif-matematik-dogal-sayilar-konu-anlatimi-41613552">https://www.hurriyet.com.tr/egitim/1-sinif-matematik-dogal-sayilar-konu-anlatimi-41613552</a>
+                        href="https://www.hurriyet.com.tr/egitim/2ser-ritmik-sayma-100e-kadar-nasil-yapilir-ikiser-ritmik-sayma-sayilari-42043049#:~:text=%C4%B0leriye%20do%C4%9Fru%20sayarken%20ilk%20say%C4%B1ya%2B,2%20%C5%9Feklinde%20devam%20edilmesi%20gerekmektedir.">kaynak-1</a>
+
+                    
                 </div>
             </div>
+
+
+
             <div class="w-full sm:w-3/12 text-lg">
                 <h1 class="text-2xl font-bold text-center mb-5 sm:mb-14 sm:mt-20">Bu Sayfayı Tasarlayan</h1>
                 <div class="flex gap-2 items-center justify-center">
@@ -175,7 +194,7 @@
                             </g>
                         </g>
                     </svg>
-                    Gizem BAŞARI
+                    Hüseyin TÜRKMEN
                 </div>
                 <div class="flex gap-2 items-center justify-center mt-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px"
@@ -227,52 +246,98 @@
                         </g>
                     </svg>
                     <a class="text-black hover:text-blue-500 transition duration-200 ease-in-out" target="_blank"
-                        href="mailto:volkanseval.vk@gmail.com">basarigizem@gmail.com</a>
+                        href="mailto:emrebaysan@gmail.com">huseyin_turkmen45@outlook.com</a>
                 </div>
-                <div class="flex space-x-2 items-center justify-center mt-4">
-                    <a target="_blank" title="github" href="https://github.com/gizembasari"><img
-                            src="../images/socials/github.svg"></a>
-                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/gizembasari/"><img
-                            src="../images/socials/linkedin.svg"></a>
-                </div>
+                <br>
             </div>
+
         </div>
+
+
     </section>
+    
+    
     <footer>
         <span class="block text-sm text-black sm:text-center py-6 px-5">© All Rights Reserved.</span>
     </footer>
+
+
     <script src="../js/app.js"></script>
     <script>
+        
+        var SoruSayisi=0;
+        var Puan=0;
+        var rasgeleKusSayisi=0;
+        var dogruIndis=-2; 
+        var dizi=[];
+        var s1=0;
+
+        function YeniOyunHesapla(){
+            var ritmikUstSayi=20;    
+            var sayac=2;
+            var operator="+";
+            for(var i=2;i<ritmikUstSayi*150; i+=2)
+            {  
+                if(sayac<=ritmikUstSayi && operator=="+")
+                { 
+                    if(sayac==ritmikUstSayi)
+                    {
+                        operator="-"; 
+                    }
+                     
+                    dizi.push({sayi:i,indis:sayac}); 
+                }else
+                { 
+                    if(sayac==2)
+                    {
+                        operator="+"; 
+                    }
+                     
+                    dizi.push({sayi:i,indis:sayac});
+                }
+                  
+                if(operator=="+")
+                    sayac+=2;
+                else
+                    sayac-=2;
+            }
+        }
+        
+      
         const countBtn = document.getElementById("countBtn");
         const container = document.getElementById("imageContainer");
 
-        let count = 0;
-
         /*Resimleri bir fonksiyon oluşturup ürettik*/
-        function resimUret() {
-            count = 0;
-            let num = Math.floor(Math.random() * 10) + 1; // 10-20 arası rasgele sayı üret
-            container.innerHTML = ""; // imageContainer öğesini temizle
-            var randomSayi = Math.floor(Math.random() * 14) + 1;
-            console.log(randomSayi);
-            for (let i = 0; i < num; i++) {
+        function resimUret() { 
+            container.innerHTML="";
+
+            for (let i = 1; i <= dizi[s1].indis; i++) {
                 let img = document.createElement("img");
 
-                img.setAttribute("src", `../images/games/image${randomSayi}.png`);
-                container.appendChild(img);
-                count++;
+                if (i == dizi[s1].indis) {
+                    img.setAttribute("src", `../images/games/stockCartoonBird2.png`); 
+                } else {
+                    img.setAttribute("src", `../images/games/stockCartoonBird1.png`);
+                }              
+
+                container.appendChild(img);             
             }
-            console.log("Üretilen Resim Sayısı " + num)
-        }
+            
+        } 
+      
         //ilk açılışta resim üretilmesi için..
+        YeniOyunHesapla();
         resimUret();
+
+        console.log(dizi);
 
         //Hangi butona tıkladığına bakıp onu cheackAnswer a yolluyoruz
         document.querySelectorAll("#buttons button").forEach(selectorBtn => {
             selectorBtn.addEventListener("click", () => {
                 console.log(`Tıklanan düğme: ${selectorBtn.innerHTML}`);
-                checkAnswer(count == selectorBtn.innerHTML)
-                console.log(count)
+                checkAnswer(dizi[s1].indis ==parseInt(selectorBtn.innerHTML.split('.').join('')))
+                //alert(count)
+                console.log(dizi[s1].indis);
             });
         });
 
@@ -281,11 +346,14 @@
         let answerCount = 0;
         let answer = document.getElementById("answer");
         let rightQuestionTimeOut;
+        s1=answerCount;
 
         //Cevap kontrol fonksiyonu
         function checkAnswer(sign) {
             answerCount++;
+            s1++;
             document.getElementById("answers-count").innerHTML = answerCount;
+           // alert(sign)
             if (sign) {
                 score += 10;
                 document.getElementById("result").innerHTML = "";
@@ -306,13 +374,14 @@
                 clearInterval(timer);
                 document.getElementById("gamesScreen").classList.add("finish");
                 document.querySelector(".finishScreen").classList.add("active");
-            } else {
+            } else { 
                 resimUret();
             }
         }
 
-        //Timer
-        let timerDisplay = document.getElementById("timer-display");
+
+          //Timer
+          let timerDisplay = document.getElementById("timer-display");
         let timer;
 
         function startTimer() {
@@ -344,8 +413,15 @@
             answerCount = 0;
             document.getElementById("answers-count").innerHTML = "0";
         });
+
+
+
+
+
+
     </script>
 
 </body>
 
 </html>
+

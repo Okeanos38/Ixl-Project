@@ -32,7 +32,48 @@
     <!--Style-->
     <link rel="stylesheet" href="../css/style.css">
 </head>
+<style>
+    
 
+#giris {
+  display: flex;
+  max-width: 111px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#cevap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  /*border-color: rgb(59 130 246 / var(--tw-border-opacity));*/
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  background-color: #4CAF50;
+  color: white;
+  margin-top: 10px;
+}
+
+</style>
 <body>
     <header class="w-full flex justify-center border-b p-2">
         <a href="/"><img width="300" src="../images/wtetui.png" alt="logo" /></a>
@@ -61,72 +102,53 @@
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">100.000 e Kadar
-                            Sayıları Karşılaştırın</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Rakamları Okur ve Yazar</span>
                     </div>
                 </li>
             </ol>
         </nav>
         <div class="container px-5 sm:px-16">
-            <div id="gamesScreen" class="flex flex-col sm:flex-row gap-5">
+            <div id="gamesScreen" class="flex flex-col sm:flex-row gap-16">
                 <div class="w-full sm:w-9/12 relative" id="answer">
                     <div class="opacity-0" id="result"></div>
-                    <h1 class="text-2xl">Onluk ve Birliklerine ayırarak gösteriniz, bu nesnelere karşılık gelen sayıyı rakamlarla yazar ve okur.
-                        </h1>
-                    <div id="imageContainer" class="grid grid-cols-10 gap-4 w-fit my-10"></div>
-                    <style>
-                        #buttons input {
-                            width: 70px;
-                            height: 70px;
-                            -webkit-appearance: none;
-                            -moz-appearance: none;
-                            appearance: none;
-                            outline: none;
-                            cursor: pointer;
-                            border-radius: 10px;
-                            background: transparent;
-                            border: 1px solid blue;
-                            color: black;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 24px;
-                            transition: all 100ms linear;
-                        }
+                    <div class="flex gap-3 items-center">
+                        <img width="40" onclick="speak()" src="../images/speaker.svg" alt="speaker sound icon">
+                        <h1 id="speechTitle" class="text-2xl">Aşağıda Kaç Adet Kuş Var? </h1>
 
-                        #buttons input:hover {
-                            background: blue;
-                            border: 1px solid blue;
-                            color: white;
-                        }
-
-                        #buttons input:checked {
-                            background: blue;
-                            border: 1px solid blue;
-                            color: white;
-                        }
-
-                        #buttons input:before {
-                            content: attr(value);
-                            display: inline-block;
-                            text-align: center;
-                            width: 100%;
-                        }
-                    </style>
-                    <div class="relative" id="buttons">
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn10" name="gameSelectInput" value="10" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn11" name="gameSelectInput" value="11" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn12" name="gameSelectInput" value="12" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn13" name="gameSelectInput" value="13" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn14" name="gameSelectInput" value="14" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn15" name="gameSelectInput" value="15" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn16" name="gameSelectInput" value="16" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn17" name="gameSelectInput" value="17" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn18" name="gameSelectInput" value="18" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn19" name="gameSelectInput" value="19" />
-                        <input type="radio" class="hover:bg-blue-600 hover:text-white font-semibold" id="btn20" name="gameSelectInput" value="20" />
                     </div>
-                    <input type="text" placeholder="asd" />
+                    <p>(Rakamı seçin ve yazın!)</p>
+                    <div id="imageContainer" class="grid grid-cols-9 gap-4 w-fit my-10"></div>
+                    <div id="buttons">
+                         <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn0">0</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn1">1</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn2">2</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn3">3</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn4">4</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn5">5</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn6">6</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn7">7</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn8">8</button>
+                        <button type="radio" class="hover:bg-blue-600 hover:text-white font-semibold"
+                            id="btn9">9</button>
+                       
+                    </div>
+
+                       <input type="text" name="giris" id="giris" required style="border:1px solid blue;border-radius: 5px; margin-top:10px ;">
+                   
+                        <button class="group duration-300 transition ease-in-out" id="cevap">
+                            
+                           Cevapla
+                        </button>
+                   
                 </div>
                 <div class="finishScreen w-full sm:w-3/12">
                     <h1 class="text-5xl mb-14">Tebrikler Kazandınız !</h1>
@@ -149,57 +171,24 @@
             <div class="w-full sm:w-9/12">
                 <h1 class="text-center font-bold text-5xl mb-14 mt-20">Konu Anlatımı</h1>
                 <div class="w3-container">
-                    <h2 class="text-3xl font-bold">&gt; Büyüktür işareti</h2>
-                    <p>
-                        Bir sayının diğer sayıdan büyük olduğu matematikte <strong>&gt;</strong> işareti ile
-                        belirtilir.&gt; ( büyüktür ) işareti, işaretin solundaki sayının sağındaki sayıdan daha büyük
-                        olduğunu belirtir.Örnek kullanımlar
-                    </p>
-                    <p>"5 , 2'den büyüktür" yazmak yerine 5 &gt; 2 diye yazmak daha kısa,kolay ve anlaşılırdır.Türkçe
-                        bilmeyen biride 5'in 2'den büyük olduğunu anlayabilir.</p>
-                    <p>"5 + 2'nin sonucu 6'dan büyüktür" yazmak yerine 5 + 2 &gt; 6 diye yazılabilir.</p>
-                    <p>"8 + 4'ün sonucu 6 + 5'den büyüktür" yazmak yerine 8 + 4 &gt; 6 + 5 diye yazılabilir.</p>
-                    <h2 class="text-3xl font-bold">&lt; Küçüktür işareti</h2>
-                    <p>
-                        Bir sayının diğer sayıdan küçük olduğu matematikte <strong>&lt;</strong> işareti ile
-                        belirtilir.&lt; ( küçüktür ) işareti, işaretin solundaki sayının sağındaki sayıdan daha küçük
-                        olduğunu belirtir.Örnek kullanımlar
-                    </p>
-                    <p>"5 , 8'den küçüktür" yazmak yerine 5 &lt; 8 diye yazılabilir.</p>
-                    <p>"4 + 2'nin sonucu 9'dan küçüktür" yazmak yerine 4 + 2 &lt; 9 diye yazılabilir.</p>
-                    <p>"7 + 5'ün sonucu 9 + 8'den küçüktür" yazmak yerine 7 + 5 &lt; 9 + 8 diye yazılabilir.</p>
-                    <section><br />
-                        <h3 class="text-3xl font-bold">2 soru ve çözümü</h3>
-                        <strong>Soru</strong>
-                        <p>
-                            316 &gt; ? <br>Yukarıdaki ifadede soru işareti yerine yazılabilecek en büyük doğal sayı
-                            kaçtır?
-                        </p>
-                        <strong>Çözümü</strong>
-                        <ul class="list-disc ml-10">
-                            <li>&gt; işareti büyüktür işaretidir.İşaretin solundaki sayı sağındaki sayıdan büyüktür.
-                            </li>
-                            <li>Soru işareti yerine 316 dan küçük sayılar yani 315 , 314 , 313 gibi sayılar yazılabilir.
-                            </li>
-                            <li>Soruda en büyük sorulduğundan doğru cevap 315 olacaktır.</li>
-                        </ul><br />
-                        <strong>Soru</strong>
-                        <p>
-                            350 - 25 &lt; A olduğuna göre A yerine yazılabilecek en küçük doğal sayı kaçtır?
-                        </p>
-                        <strong>Çözümü</strong>
-                        <ul>
-                            <li>&lt; işareti küçüktür işaretidir.İşaretin solundaki sayı sağındaki sayıdan küçüktür.
-                            </li>
-                            <li>350 - 25 işlemi sonucu 325 olur.</li>
-                            <li>325 &lt; A olur.</li>
-                            <li>A yerine 325 den büyük sayılar yani 326 , 327 , 328 gibi sayılar yazılabilir.</li>
-                            <li>Soruda en küçük sorulduğundan doğru cevap 324 olacaktır.</li>
-                        </ul><br />
-                        <h1 class="text-3xl font-bold">Kaynakça</h1>
-                        <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
-                            href="https://matematikproblemi.com/b%C3%BCy%C3%BCkt%C3%BCr-k%C3%BC%C3%A7%C3%BCkt%C3%BCr-i%C5%9Faretleri">https://matematikproblemi.com/büyüktür-küçüktür-işaretleri</a>
-                    </section>
+                    <h2 class="text-3xl font-bold">Rakamları Okur ve Yazar</h2>
+                    <br />
+                    <p>Matematik işlemlerini rakamları kullanarak yaparız.Aynı zamanda yaşımızı rakamları kullanarak öğreniriz. Bu rakamlar doğal sayılardır. Şimdi doğal sayıların ne olduğunu öğrenelim ve bu konuda bilgileri alalım. İşte 1. sınıf matematik doğal sayılar konu anlatımı.</p> <br />
+                    <p>Doğal sayıları öğrendiğimiz zaman tüm matematik işlemlerini kolayca yapabiliriz. Aynı zamanda doğal sayılar ile beraber öğrenmemiz gereken bazı terimler bulunmaktadır. Şimdi bu terimlerin ne olduğuna bakalım be sırasıyla öğrenelim.</p>
+                    <br />
+                    <p><strong> Doğal Sayılar</strong></p> <br />
+                    <p>Öncelikle doğal sayıların ne olduğunu öğrenelim.</p> <br />
+                    <p><strong>Doğal sayılar:</strong> Sıfırdan dokuza kadar olan sayıların her birine doğal sayı denmektedir. Rakamlar ile bu sayıları yazmak gerekirse şu şekilde sıralama yapabiliriz;
+                    </p> <br />
+                    <p> (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)</p> <br />
+                    <p>Yukarıda gördüğümüz rakamları kullanarak sürekli başka rakamlar elde ederiz.</p> <br />
+                    <p> Rakam: Sayıları yazmak için kullandığımız işaretlere rakam denir. Bu rakamlar sıfırdan başlar ve dokuza kadar devam eder.</p> <br />
+                    <p> Böylece görmüş olduğunuz gibi doğal sayılar Toplamda 10 tanedir. Aynı zamanda en büyük doğal sayı ise dokuz olarak öne çıkıyor. Bu durumda en küçük doğal sayı ise sıfır rakamıdır.</p>
+                    <br />
+                   
+                    <h1 class="text-3xl font-bold">Kaynakça</h1>
+                    <a target="_blank" class="text-black hover:text-blue-500 transition duration-200 ease-in-out"
+                        href="https://www.hurriyet.com.tr/egitim/1-sinif-matematik-dogal-sayilar-konu-anlatimi-41613552">https://www.hurriyet.com.tr/egitim/1-sinif-matematik-dogal-sayilar-konu-anlatimi-41613552</a>
                 </div>
             </div>
             <div class="w-full sm:w-3/12 text-lg">
@@ -232,7 +221,7 @@
                             </g>
                         </g>
                     </svg>
-                    Volkan Korkmaz
+                    Ayşegül SAĞLAM GÜLBAĞÇA
                 </div>
                 <div class="flex gap-2 items-center justify-center mt-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px"
@@ -284,14 +273,9 @@
                         </g>
                     </svg>
                     <a class="text-black hover:text-blue-500 transition duration-200 ease-in-out" target="_blank"
-                        href="mailto:volkanseval.vk@gmail.com">volkanseval.vk@gmail.com</a>
+                        href="mailto:aysegul.sglm@gmail.com">aysegul.sglm@gmail.com</a>
                 </div>
-                <div class="flex space-x-2 items-center justify-center mt-4">
-                    <a target="_blank" title="github" href="https://github.com/Okeanos38"><img
-                            src="../images/socials/github.svg"></a>
-                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/volkan--korkmaz/"><img
-                            src="../images/socials/linkedin.svg"></a>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -299,7 +283,30 @@
         <span class="block text-sm text-black sm:text-center py-6 px-5">© All Rights Reserved.</span>
     </footer>
     <script src="../js/app.js"></script>
-    <script>
+
+  <script>
+
+    document.getElementById("giris").onkeypress=function(evt){
+  
+     
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+       return false;
+    return true;
+
+      };
+          
+
+
+   document.getElementById("giris").onkeypress=function(e)
+    {
+
+        if(e.key==="Enter")
+        {
+        e.preventDefault();
+        document.getElementById("cevap").click();
+    }
+    }
 
     </script>
 
@@ -312,27 +319,67 @@
         /*Resimleri bir fonksiyon oluşturup ürettik*/
         function resimUret() {
             count = 0;
-            let num = Math.floor(Math.random() * 11) + 10; // 10-20 arası rasgele sayı üret
+            let num = Math.floor(Math.random() * 10); // 1-9 arası rasgele sayı üret
             container.innerHTML = ""; // imageContainer öğesini temizle
+            var randomSayi = Math.floor(Math.random() * 3) + 1;
+            console.log(num);
+            console.log(randomSayi);
             for (let i = 0; i < num; i++) {
                 let img = document.createElement("img");
-                img.setAttribute("src", `../images/games/stockCartoonBird.png`);
+
+                img.setAttribute("src", `../images/games/stockCartoonBird${randomSayi}.png`);
                 container.appendChild(img);
                 count++;
             }
             console.log("Üretilen Resim Sayısı " + num)
+            console.log(count);
         }
         //ilk açılışta resim üretilmesi için..
         resimUret();
 
+
+        let buton="";
+        let giris="";
+        let buttons;
         //Hangi butona tıkladığına bakıp onu cheackAnswer a yolluyoruz
-        document.querySelectorAll("#buttons input").forEach(selectorBtn => {
+        document.querySelectorAll("#buttons button").forEach(selectorBtn => {
             selectorBtn.addEventListener("click", () => {
-                console.log(`Tıklanan düğme: ${selectorBtn.value}`);
-                checkAnswer(count == selectorBtn.value)
-                console.log(count)
+                console.log(`Tıklanan düğme: ${selectorBtn.innerHTML}`);
+                buton=selectorBtn.innerHTML;
+                buttons=selectorBtn;
+                buttons.style.background="blue";
+                buttons.style.color="white";
+                // checkAnswer(count == selectorBtn.innerHTML)
+                // console.log(count)
             });
         });
+
+
+         document.getElementById("cevap").onclick=function()
+         {
+         
+          giris=document.getElementById("giris").value;
+
+         if(count==giris && count==buton)
+         {
+            
+            checkAnswer(1==1);
+            document.getElementById("giris").value="";
+            buttons.style.color="black";
+            buttons.style.background="transparent";
+         }
+         else 
+         {
+             
+            checkAnswer(1==0);
+            document.getElementById("giris").value="";
+             buttons.style.color="black";
+            buttons.style.background="transparent";
+
+         }
+
+
+         }
 
         // Puan değişkenleri
         let score = 0;
